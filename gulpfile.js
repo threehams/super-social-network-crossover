@@ -39,12 +39,15 @@ gulp.task('minify-css', function () {
 gulp.task('watch', function () {
   var bundler = watchify(browserify({ cache: {}, packageCache: {}, fullPaths: true, debug: true}));
 
+  gulp.watch('app/**/*.css', ['minify-css']);
+  gulp.watch('app/**/*.html', ['copy-html-files']);
+
   bundler
     .add('./app/js/main.js')
     .transform(partialify)
     .transform(jadeify)
     .on('update', rebundle);
-  rebundle();
+  return rebundle();
 
   function rebundle() {
     return bundler.bundle()
@@ -56,9 +59,6 @@ gulp.task('watch', function () {
       .pipe(source('main.js'))
       .pipe(gulp.dest('./dist/js'));
   }
-
-  gulp.watch('app/**/*.css', ['minify-css']);
-  gulp.watch('app/**/*.html', ['copy-html-files']);
 });
 gulp.task('copy-bower-components', function () {
   return gulp.src('./app/bower_components/**')
