@@ -21,6 +21,11 @@
   "predef": [
     "_",
     "moment",
-    "angular"
+    "angular",
+    "describe",
+    "expect",
+    "it",
+    "beforeEach",
+    "inject"
   ]
 }

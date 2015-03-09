@@ -1,3 +1,5 @@
+'use strict';
+
 var ResourceService = function($http) {
   return {};
 };

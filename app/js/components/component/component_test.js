@@ -1,3 +1,5 @@
+'use strict';
+
 describe('component', function() {
   var that = this;
 
@@ -13,6 +15,6 @@ describe('component', function() {
   }));
 
   it('does something', function() {
-    expect(true).to.be.false;
+    expect(that.scope).to.be.false;
   });
 });

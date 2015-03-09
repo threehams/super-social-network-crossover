@@ -1,7 +1,9 @@
+'use strict';
+
 module.exports = function() {
   return {
-    restrict: "A",
-    require: "ngModel",
+    restrict: 'A',
+    require: 'ngModel',
     link: function(scope, element, attrs, ngModel) {
       function isEqualToOther(value) {
         var otherField = scope.$eval(attrs.match);
@@ -10,7 +12,7 @@ module.exports = function() {
 
       ngModel.$validators.match = function(modelValue) {
         return isEqualToOther(modelValue);
-      }
+      };
     }
   };
 };

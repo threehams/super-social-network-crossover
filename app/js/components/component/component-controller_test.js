@@ -1,3 +1,5 @@
+'use strict';
+
 describe('ComponentController', function() {
   var that = this;
 
@@ -5,10 +7,10 @@ describe('ComponentController', function() {
   beforeEach(inject(function($rootScope, _$controller_) {
     that.scope = $rootScope;
     that.controller = _$controller_;
-    that.controller('ComponentController', {'$scope': that.scope});
+    that.controller('ComponentController as vm', {'$scope': that.scope});
   }));
 
   it('fails', function() {
-    expect(true).to.be.false;
+    expect(that.scope.vm).to.be.false;
   });
 });

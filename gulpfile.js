@@ -6,7 +6,6 @@ var _ = require('lodash');
 var connect = require('gulp-connect');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
-var clean = require('gulp-clean');
 var browserify = require('browserify');
 var partialify = require('partialify');
 var watchify = require('watchify');
@@ -57,6 +56,9 @@ gulp.task('watch', function () {
       .pipe(source('main.js'))
       .pipe(gulp.dest('./dist/js'));
   }
+
+  gulp.watch('app/**/*.css', ['minify-css']);
+  gulp.watch('app/**/*.html', ['copy-html-files']);
 });
 gulp.task('copy-bower-components', function () {
   return gulp.src('./app/bower_components/**')

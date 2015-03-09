@@ -1,3 +1,4 @@
+'use strict';
 // Karma configuration
 // Generated on Sat Jan 24 2015 20:56:46 GMT-0800 (Pacific Standard Time)
 
@@ -78,7 +79,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode

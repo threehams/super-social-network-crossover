@@ -8,7 +8,9 @@ require('angular-messages');
 global._ = require('lodash');
 global.moment = require('moment');
 
-var app = angular.module('SampleApp', ['ngRoute', 'ngAnimate', 'ngMessages']);
+var vendor = ['ngRoute', 'ngAnimate', 'ngMessages'];
+var components = [];
+var app = angular.module('SampleApp', vendor.concat(components));
 
 // pages
 app.controller('PageController', require('./pages/page/page-controller.js'));
@@ -32,7 +34,8 @@ app.config([
     $routeProvider
       .when('/', {
         template: require('./pages/page/page-template.jade'),
-        controller: 'PageController'
+        controller: 'PageController',
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'
@@ -40,6 +43,7 @@ app.config([
   }
 ]);
 
+// Uncomment for debugging
 //angular.module('utils').filter('isDefined', function () {
 //  return function (value, msg) {
 //    if (value === undefined) {

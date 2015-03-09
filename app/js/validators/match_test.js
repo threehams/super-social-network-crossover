@@ -1,3 +1,5 @@
+'use strict';
+
 describe('directive: match', function() {
   var that = this;
 

@@ -1,3 +1,5 @@
+'use strict';
+
 describe('ResourceService', function() {
   var that = this;
 

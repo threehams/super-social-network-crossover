@@ -7,10 +7,10 @@ describe('PageController', function() {
   beforeEach(inject(function($rootScope, _$controller_) {
     that.scope = $rootScope;
     that.controller = _$controller_;
-    that.controller('PageController', {'$scope': that.scope});
+    that.controller('PageController as vm', {'$scope': that.scope});
   }));
 
   it('fails', function() {
-    expect(true).to.be.false;
+    expect(that.scope.vm).to.be.false;
   });
 });
