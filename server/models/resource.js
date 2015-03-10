@@ -14,7 +14,7 @@ Resource.prototype.all = function() {
 };
 
 Resource.prototype.find = function(id) {
-  return Promise.resolve({id: 1, username: 'pork'});
+  return Promise.resolve({id: 1, url: 'http://placehold.it/400/400'});
 };
 
 module.exports = Resource;

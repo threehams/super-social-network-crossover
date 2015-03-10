@@ -1,15 +1,14 @@
 'use strict';
 
 var gulp = require('gulp');
-var _ = require('lodash');
 
-var uglify = require('gulp-uglify');
+//var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var browserify = require('browserify');
 var partialify = require('partialify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream');
-//var browserSync = require('browser-sync');
+var browserSync = require('browser-sync');
 var del = require('del');
 var karma = require('karma');
 var path = require('path');
@@ -17,6 +16,7 @@ var runSequence = require('run-sequence');
 var jadeify = require('jadeify');
 var nodemon = require('nodemon');
 var mocha = require('gulp-mocha-co');
+var reload = browserSync.reload;
 
 gulp.task('clean', function (callback) {
   return del(['./dist'], callback);
@@ -24,9 +24,10 @@ gulp.task('clean', function (callback) {
 
 gulp.task('minify-css', function () {
   var opts = { comments: true, spare: true };
-  return gulp.src(['./client/**/*.css', '!./client/bower_components/**'])
+  return gulp.src('./client/**/*.css')
     .pipe(minifyCSS(opts))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/'))
+    .pipe(reload({stream: true}));
 });
 //gulp.task('minify-js', function () {
 //  return gulp.src(['./client/**/*.js', '!./client/bower_components/**'])
@@ -39,6 +40,11 @@ gulp.task('minify-css', function () {
 
 gulp.task('watch', function () {
   var bundler = watchify(browserify({ cache: {}, packageCache: {}, fullPaths: true, debug: true}));
+
+  browserSync({
+    proxy: 'localhost:8888',
+    port: 8080
+  });
 
   gulp.watch('client/**/*.css', ['minify-css']);
   gulp.watch('client/**/*.html', ['copy-html-files']);
@@ -53,17 +59,18 @@ gulp.task('watch', function () {
 
   function rebundle() {
     return bundler.bundle()
-      .on('error', function (err) {
+      .on('error', function(err) {
         console.log('Browserify Error');
         console.log(err.message);
         console.log(err.stack);
       })
       .pipe(source('main.js'))
-      .pipe(gulp.dest('./dist/js'));
+      .pipe(gulp.dest('./dist/js'))
+      .pipe(reload({stream: true}));
   }
 });
 gulp.task('copy-bower-components', function () {
-  return gulp.src('./client/bower_components/**')
+  return gulp.src('./bower_components/**')
     .pipe(gulp.dest('dist/bower_components'));
 });
 gulp.task('copy-html-files', function () {
@@ -79,13 +86,6 @@ gulp.task('connect-dist', function () {
     nodeArgs: ['--harmony-generators']
   });
 });
-//gulp.task('browser-sync', function () {
-//  browserSync({
-//    server: {
-//      baseDir: './'
-//    }
-//  })
-//});
 
 gulp.task('mocha', function() {
   return gulp.src(['./server/test/**/*_test.js'])
@@ -101,7 +101,7 @@ gulp.task('karma', function() {
 });
 
 gulp.task('default', function() {
-  runSequence('clean', 'build', 'mocha', 'karma');
+  runSequence('clean', 'build', 'karma');
 });
 
 gulp.task('build',

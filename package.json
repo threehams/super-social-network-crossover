@@ -47,11 +47,13 @@
     "chai": "^2.1.1",
     "co-mocha": "^1.1.0",
     "co-supertest": "0.0.8",
+    "dirty-chai": "^1.2.0",
     "jade": "^1.9.1",
     "jadeify": "^4.0.0",
     "karma": "^0.12.31",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.7",
+    "karma-dirty-chai": "0.0.1",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-sinon": "^1.0.4",
@@ -60,7 +62,6 @@
     "mocha": "^2.2.1",
     "run-sequence": "^1.0.2",
     "sinon": "^1.13.0",
-    "supertest": "^0.15.0",
     "supertest-as-promised": "^1.0.0"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "extends": "../.jshintrc",
+  "predef": [
+    "_",
+    "moment",
+    "angular",
+    "describe",
+    "expect",
+    "it",
+    "beforeEach",
+    "inject"
+  ]
+}
