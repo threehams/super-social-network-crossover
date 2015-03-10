@@ -20,7 +20,7 @@ module.exports = function(config) {
       'dist/js/main.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/moment/moment.js',
-      'app/**/*_test.js'
+      'client/**/*_test.js'
     ],
 
 
@@ -49,8 +49,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'app/**/*.html': ['ng-html2js'],
-      'app/**/*.js': ['sourcemap']
+      'client/**/*.html': ['ng-html2js'],
+      'client/**/*.js': ['sourcemap']
     },
 
 

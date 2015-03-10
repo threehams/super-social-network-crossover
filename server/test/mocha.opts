@@ -1,0 +1,3 @@
+--recursive **/*_test.js
+--timeout 500
+--ui bdd

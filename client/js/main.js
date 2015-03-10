@@ -29,7 +29,7 @@ app.config([
   '$locationProvider',
   '$routeProvider',
   function ($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
+    $locationProvider.html5Mode(true);
 
     $routeProvider
       .when('/', {
