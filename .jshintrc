@@ -17,10 +17,5 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  "white": false,
-  "predef": [
-    "_",
-    "moment",
-    "angular"
-  ]
+  "white": false
 }
