@@ -16,7 +16,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/lodash/dist/lodash.min.js',
+      'node_modules/lodash/index.js',
+      'dist/js/vendor.js',
       'dist/js/main.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/moment/moment.js',
