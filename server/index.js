@@ -1,4 +1,4 @@
 'use strict';
 
 var app = require('./app');
-app.listen(8888);
+app.listen(process.env.PORT || 8888);

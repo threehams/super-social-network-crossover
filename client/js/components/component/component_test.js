@@ -14,7 +14,7 @@ describe('component', function() {
     that.isolate = that.element.isolateScope();
   }));
 
-  it('does something', function() {
-    expect(that.scope).to.be.false;
+  it('creates an isolate scope', function() {
+    expect(that.isolate).to.exist;
   });
 });

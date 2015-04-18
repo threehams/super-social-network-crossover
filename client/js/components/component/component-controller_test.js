@@ -10,7 +10,7 @@ describe('ComponentController', function() {
     that.controller('ComponentController as vm', {'$scope': that.scope});
   }));
 
-  it('fails', function() {
-    expect(that.scope.vm).to.be.false;
+  it('creates a scope', function() {
+    expect(that.scope.vm).to.exist;
   });
 });

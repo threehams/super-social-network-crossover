@@ -8,9 +8,7 @@ require('angular-messages');
 global._ = require('lodash');
 global.moment = require('moment');
 
-var vendor = ['ngRoute', 'ngAnimate', 'ngMessages'];
-var components = [];
-var app = angular.module('SampleApp', vendor.concat(components));
+var app = angular.module('SampleApp', ['ngRoute', 'ngAnimate', 'ngMessages']);
 
 // pages
 app.controller('PageController', require('./pages/page/page-controller.js'));

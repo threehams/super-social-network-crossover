@@ -8,7 +8,7 @@ describe('ResourceService', function() {
     that.ResourceService = _ResourceService_;
   }));
 
-  it('fails', function() {
-    expect(true).to.be.false;
+  it('returns a service', function() {
+    expect(that.ResourceService).to.exist;
   });
 });
