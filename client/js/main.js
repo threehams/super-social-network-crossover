@@ -3,7 +3,6 @@
 require('angular');
 require('angular-route');
 require('angular-animate');
-require('angular-bootstrap');
 require('angular-messages');
 global._ = require('lodash');
 global.moment = require('moment');
@@ -14,8 +13,10 @@ var app = angular.module('SampleApp', ['ngRoute', 'ngAnimate', 'ngMessages']);
 app.controller('PageController', require('./pages/page/page-controller.js'));
 
 // components (controllers exposed for testing)
-app.directive('component', require('./components/component/component'));
-app.controller('ComponentController', require('./components/component/component-controller.js'));
+app.directive('tweet', require('./components/tweet/tweet'));
+app.controller('TweetController', require('./components/tweet/tweet-controller.js'));
+app.directive('facebookPost', require('./components/facebook-post/facebook-post'));
+app.controller('TweetController', require('./components/facebook-post/facebook-post-controller.js'));
 
 // resources
 app.factory('ResourceService', require('./services/resource-service'));

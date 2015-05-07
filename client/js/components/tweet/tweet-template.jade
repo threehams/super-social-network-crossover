@@ -1,0 +1,33 @@
+.tweet-container
+  img.tweet-user-image(ng-src='{{ vm.data.userImage }}')
+
+  .tweet-inner
+    .tweet-user-info
+      span.tweet-full-name {{ vm.data.fullName }}
+      span.tweet-username {{ vm.data.username }}
+      span.tweet-created-at.dot-before {{ vm.data.createdAt | date: 'MMM d' }}
+
+    .tweet-message {{ vm.data.message }}
+    img.tweet-image(ng-src='{{ vm.data.image }}' ng-if='vm.data.image')
+    div(ng-if='vm.data.video') {{ vm.data.video }}
+
+    .tweet-interaction
+      .tweet-retweets
+        .tweet-count-title Retweets
+        .tweet-count-number {{ vm.data.retweetCount }}
+      .tweet-favorites
+        .tweet-count-title Favorites
+        .tweet-count-number {{ vm.data.favoriteCount }}
+      .tweet-users-list
+        img(ng-repeat='user in vm.data.relatedUsers', ng-src='{{ user.userImage }}')
+
+    .tweet-details
+      | {{ vm.data.createdAt | date: 'H:mm:ss a - d MMM yyyy ' }}
+      span.dot-before Details
+
+    .tweet-actions
+      i.fa.fa-arrow-left
+      i.fa.fa-retweet
+      i.fa.fa-star
+      i.fa.fa-user-plus
+      i.fa.fa-ellipsis-h

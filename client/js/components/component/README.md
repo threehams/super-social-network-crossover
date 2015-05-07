@@ -1,1 +1,0 @@
-This will have info on organizing and testing components

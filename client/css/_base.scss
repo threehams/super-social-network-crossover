@@ -1,1 +1,11 @@
 body, figure { margin: 0; }
+
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

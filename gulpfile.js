@@ -79,7 +79,7 @@ gulp.task('deploy-bundle', function() {
     .external('angular-animate')
     .external('angular-messages')
     .external('angular-touch')
-    .transform(jadeify)
+    .transform(jadeify, {pretty: false})
     .bundle()
     .pipe(source('main.js'))
     .pipe(streamify(uglify()))
@@ -109,7 +109,7 @@ gulp.task('watch', function () {
     .external('angular-animate')
     .external('angular-messages')
     .external('angular-touch')
-    .transform(jadeify)
+    .transform(jadeify, {pretty: false})
     .on('update', rebundle);
   return rebundle();
 

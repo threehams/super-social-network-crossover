@@ -1,6 +1,6 @@
 'use strict';
 
-describe('component', function() {
+describe('tweet', function() {
   var that = this;
 
   beforeEach(angular.mock.module('SampleApp'));
@@ -8,7 +8,7 @@ describe('component', function() {
     that.$compile = _$compile_;
     that.scope = $rootScope.$new();
 
-    that.element = angular.element('<component></component>');
+    that.element = angular.element('<tweet></tweet>');
     that.element = that.$compile(that.element)(that.scope);
     that.scope.$digest();
     that.isolate = that.element.isolateScope();

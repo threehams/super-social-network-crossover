@@ -1,0 +1,114 @@
+.dot-before:before {
+  content: "\00b7";
+  margin: 0 5px 0 0;
+}
+
+.tweet-container {
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 10px auto;
+  padding: 12px;
+  width: 600px;
+}
+
+.tweet-user-image {
+  border-radius: 5px;
+  float: left;
+  margin: 0 10px 0 0;
+  width: 48px;
+}
+
+.tweet-user-info > span {
+  margin-right: 5px;
+}
+
+.tweet-inner {
+  display: table-cell; // Show content in block next to user icon (block formatting context)
+  margin: 0;
+}
+
+.tweet-message {
+  margin-bottom: 8px;
+}
+
+.tweet-image {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.tweet-full-name {
+  font-weight: 700;
+}
+
+.tweet-username {
+  color: $font-secondary;
+}
+
+.tweet-created-at {
+  color: $font-secondary;
+  font-size: 90%;
+}
+
+// Retweets, favorites, and icons of people who've done either
+
+.tweet-interaction {
+  border-bottom: $border-thin;
+  border-top: $border-thin;
+  width: 100%;
+}
+
+.tweet-retweets {
+  display: inline-block;
+  padding: 3px 15px 5px 0;
+  vertical-align: top;
+}
+
+.tweet-favorites {
+  display: inline-block;
+  padding: 3px 15px 5px 0;
+  vertical-align: top;
+}
+
+.tweet-count-title {
+  color: $font-secondary;
+  font-size: 75%;
+  text-transform: uppercase;
+}
+
+.tweet-count-number {
+  font-size: 120%;
+}
+
+.tweet-users-list {
+  border-left: $border-thin;
+  display: inline-block;
+  padding: 14px;
+
+  & > img {
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0;
+    margin-right: 6px;
+    vertical-align: middle;
+    width: 24px;
+  }
+}
+
+.tweet-details {
+  margin-top: 5px;
+  color: $font-secondary;
+  font-size: 90%;
+}
+
+.tweet-actions {
+  font-size: 20px;
+  color: $font-tertiary;
+
+  & > i {
+    margin: 10px 34px 10px 0;
+  }
+}

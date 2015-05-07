@@ -1,3 +1,5 @@
-div.header
-div.container
-  component(ng-repeat='resource in vm.resources', data='resource.url')
+div.page-header
+div.page-container
+  tweet(ng-repeat='tweet in vm.tweets', data='tweet')
+  facebook-post(ng-repeat='post in vm.facebookPosts', data='post')
+div.page-footer

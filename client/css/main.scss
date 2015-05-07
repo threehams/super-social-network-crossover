@@ -1,24 +1,14 @@
-@import 'constants';
+@import 'normalize.css';
+@import 'theme';
 @import 'base';
 @import 'mixins';
 
-.container-wrap {
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
+.page-container {
+  padding: 20px 0 40px 0;
+  background-color: $non-photo-blue;
 }
 
-.container {
-  align-items: flex-start;
-  align-content: flex-start;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.header {
-  height: 200px;
+.page-header {
   background-color: $non-photo-blue;
 }
 
@@ -50,4 +40,5 @@
   height: 100%;
 }
 
-@import '../js/components/component/component-style';
+@import '../js/components/tweet/tweet-style';
+@import '../js/components/facebook-post/facebook-post-style';

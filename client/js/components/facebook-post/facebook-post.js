@@ -7,8 +7,8 @@ module.exports = function() {
       data: '='
     },
     replace: true,
-    template: require('./component-template.jade'),
-    controller: require('./component-controller'),
+    template: require('./facebook-post-template.jade'),
+    controller: require('./facebook-post-controller'),
     controllerAs: 'vm',
     bindToController: true
   };

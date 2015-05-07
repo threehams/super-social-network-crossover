@@ -1,0 +1,27 @@
+// sizes
+$desktop-width: 768px;
+
+// theme colors
+$non-photo-blue: #A4DDED;
+
+$font-main: #000000;
+$font-secondary: #777777;
+$font-tertiary: #cccccc;
+$link-color: #3B5998;
+
+$border-thin: 1px solid #BBBBBB;
+
+// fonts
+body {
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  font-size: 15px;
+  letter-spacing: -0.015em;
+}
+
+a {
+  text-decoration: none;
+
+  &:link, &:visited, &:active {
+    color: $link-color;
+  }
+}

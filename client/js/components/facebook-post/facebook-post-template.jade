@@ -1,0 +1,57 @@
+.facebook-post
+  .facebook-post-upper
+    img.facebook-post-user-image(ng-src='{{ vm.data.userImage }}')
+    .facebook-post-basic
+      a.facebook-post-full-name(href='#') {{ vm.data.fullName }}
+      span.facebook-post-action(ng-if='vm.action') {{ vm.action }}
+      span.facebook-post-subject(ng-if='vm.subject') {{ vm.subject }}
+      br
+      span.facebook-post-detail.facebook-post-divider {{ vm.data.createdAt | date: "MMMM d 'at' hh:mma" }}
+      span.facebook-post-detail.facebook-post-divider(ng-if='vm.data.location') {{ vm.data.location }}
+      span.facebook-post-detail.facebook-post-divider.fa.fa-globe
+
+    .facebook-post-message {{ vm.data.message }}
+    img.facebook-post-image(ng-src='{{ vm.data.image }}', ng-if='vm.data.image')
+    video.facebook-post-video(ng-if='vm.data.video') {{ vm.data.message }}
+
+    //.facebook-post-actions
+    a.facebook-post-action.facebook-post-divider(href='#') Like
+    a.facebook-post-action.facebook-post-divider(href='#') Comment
+    a.facebook-post-action.facebook-post-divider(href='#') Share
+
+  .facebook-post-lower
+    .facebook-post-likes(ng-if='vm.data.likes.length > 0')
+      i.fa.fa-thumbs-o-up.facebook-blue &nbsp;
+      span(ng-if='vm.data.likes.length === 1')
+        a(href='#') {{ vm.data.likes[0].username }}
+        |  likes this.
+      span(ng-if='vm.data.likes.length === 2')
+        a(href='#') {{ vm.data.likes[0].username }}
+        |  and&nbsp;
+        a(href='#') {{ vm.data.likes[1].username }}
+        |  like this.
+      span(ng-if='vm.data.likes.length === 3')
+        a(href='#') {{ vm.data.likes[0].username }}
+        |  and&nbsp;
+        a(href='#') {{ vm.data.likes.length - 1 }} others
+        |  like this.
+      span(ng-if='vm.data.likes.length > 3')
+        a(href='#') {{ vm.data.likes[0].username }}
+        | ,&nbsp;
+        a(href='#') {{ vm.data.likes[1].username }}
+        |  and&nbsp;
+        a(href='#') {{ vm.data.likes.length - 2 }} others
+        |  like this.
+
+    div
+      .facebook-post-comment(ng-repeat='comment in vm.data.comments')
+        img.facebook-post-comment-user-image(ng-src='{{ comment.userImage }}')
+        .facebook-post-comment-right
+          a.facebook-post-comment-username(href='#') {{ comment.username }}
+          |  {{ comment.message }}
+          br
+          a.facebook-post-divider(href='#') Like
+          a.facebook-post-divider(href='#') Reply
+          a.facebook-post-divider(href='#')
+            i.fa.fa-thumbs-o-up  {{ comment.likes.length }}
+          a.facebook-post-divider  {{ comment.createdAt | date: "MMMM d 'at' hh:mma" }}
