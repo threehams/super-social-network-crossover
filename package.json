@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Public roadmap for the game, Death Whimsy",
   "main": "index.js",
+  "engine": "node 0.12.2",
   "scripts": {
     "gulp": "node --harmony-generators ./node_modules/gulp/bin/gulp.js"
   },
