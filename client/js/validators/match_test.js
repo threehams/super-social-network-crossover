@@ -3,7 +3,7 @@
 describe('directive: match', function() {
   var that = this;
 
-  beforeEach(angular.mock.module('SampleApp'));
+  beforeEach(angular.mock.module('SocialCrossover'));
   beforeEach(inject(function ($rootScope, $compile) {
     that.scope = $rootScope;
 

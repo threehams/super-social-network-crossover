@@ -1,13 +1,13 @@
 'use strict';
 
-describe('PageController', function() {
+describe('$NAME_UPPERCASE$Controller', function() {
   var that = this;
 
-  beforeEach(angular.mock.module('SocialCrossover'));
+  beforeEach(angular.mock.module('$APPNAME$'));
   beforeEach(inject(function($rootScope, _$controller_) {
     that.scope = $rootScope;
     that.controller = _$controller_;
-    that.controller('PageController as vm', {'$scope': that.scope});
+    that.controller('$NAME_UPPERCASE$Controller as vm', {'$scope': that.scope});
   }));
 
   it('creates a scope', function() {

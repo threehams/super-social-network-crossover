@@ -6,16 +6,16 @@ $facebook-post-border: $border-thin;
 
 .facebook-post {
   font-size: 90%;
-  margin: 0 auto;
-  vertical-align: top;
+  margin: 5px auto;
   width: 600px;
+  vertical-align: top;
 }
 
 .facebook-post-upper {
-  border-radius: $facebook-post-border-radius $facebook-post-border-radius 0 0;
   background-color: $facebook-post-main-bg-color;
-  padding: $facebook-post-padding;
   border-bottom: $facebook-post-border;
+  border-radius: $facebook-post-border-radius $facebook-post-border-radius 0 0;
+  padding: $facebook-post-padding;
 }
 
 .facebook-post-lower {
@@ -45,6 +45,7 @@ $facebook-post-border: $border-thin;
 .facebook-post-image {
   display: block;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .facebook-post-action {

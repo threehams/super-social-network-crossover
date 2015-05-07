@@ -1,0 +1,29 @@
+.google-post
+  .google-post-upper
+    img.google-post-user-image(ng-src='{{ vm.data.userImage }}')
+    .google-post-details
+      a.google-post-full-name(href='#') {{ vm.data.fullName }}
+      br
+      span.google-post-detail.google-post-divider {{ vm.data.privacy }}
+      span.google-post-detail.google-post-divider {{ vm.data.createdAt | date: 'MMMM d, yyyy' }}
+
+    .google-post-message {{ vm.data.message }}
+  .google-post-media(ng-if='vm.data.image || vm.data.video')
+    img(ng-src='{{ vm.data.image }}', ng-if='vm.data.image')
+    video(ng-src='{{ vm.data.video }}', ng-if='vm.data.video' autoplay)
+  .google-post-interactions
+    .google-post-actions
+      .google-post-action +{{ vm.data.plusOneCount }}
+      .google-post-action.fa.fa-share
+    .google-post-activity
+      img(ng-repeat='user in vm.data.relatedUsers', ng-src='{{ user.userImage }}')
+  .google-post-comments
+    .google-post-comment(ng-repeat='comment in vm.data.comments')
+      img.google-post-comment-user-image(ng-src='{{ comment.userImage }}')
+      .google-post-comment-message
+        a.google-post-comment-full-name(href='#') {{ comment.username }}
+        br
+        span.google-post-detail {{ comment.createdAt | date: 'MMMM d, yyyy' }}
+        span.google-post-comment-plus-one-count  +{{ comment.plusOneCount }}
+        span.google-post-comment-plus-one +1
+        div {{ comment.message }}

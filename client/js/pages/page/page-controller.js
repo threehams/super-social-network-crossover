@@ -60,58 +60,54 @@ module.exports = [function () {
               username: 'Pork Products'
             }
           ]
+        },
+        {
+          username: 'Pork Products',
+          userImage: 'http://www.placecage.com/40/40',
+          message: 'I do not like this and I did not mean to like this',
+          createdAt: new Date(),
+          likes: null
         }
       ]
     }
   ];
   vm.googlePosts = [
     {
-      userImage: '',
-      username: '',
-      privacy: '',
+      userImage: 'http://www.placecage.com/c/46/46',
+      fullName: 'Lorem Googsum',
+      privacy: 'Close Friends', // can be anything - it's a self-defined circle
       createdAt: new Date(),
 
-      message: '',
-      image: '',
-      video: ''
-      /*
-       * ANATOMY OF A GOOGLE+ POST
-       *
-       * User icon
-       * User name
-       * Privacy setting (circle)
-       * Time
-       *
-       * Text
-       * Image
-       * Video
-       *
-       * +1
-       * Share
-       * Add comment
-       *
-       * Comment count
-       * Show/hide comments
-       *
-       * Comments
-       *   Comment
-       *     User icon
-       *     User name
-       *     Time
-       *     +1 count
-       *     +1 button
-       *     Text
-       *     On hover:
-       *       Reply
-       *       Flag
-       *   Add comment box
-       *     User icon
-       *     Comment box
-       *
-       *     Post comment
-       *     Cancel
-       */
+      message: 'In fermentum urna erat, eget tristique quam porttitor non. Aliquam mattis tellus libero, nec fringilla diam auctor ac volutpat.',
+      image: 'http://www.placecage.com/506/400',
+      video: null,
 
+      plusOneCount: 3,
+      sharesCount: 1,
+      comments: [
+        {
+          userImage: 'http://www.placecage.com/40/40',
+          username: 'Nick Cage',
+          createdAt: new Date(),
+          plusOneCount: 1,
+          message: 'LOL'
+        },
+        {
+          userImage: 'http://www.placecage.com/40/40',
+          username: 'Dick Ipsum',
+          createdAt: new Date(),
+          plusOneCount: 4,
+          message: 'u should use bacon ipsum'
+        }
+      ],
+      relatedUsers: [
+        {
+          userImage: 'http://lorempixel.com/28/28/'
+        },
+        {
+          userImage: 'http://www.placecage.com/28/28'
+        }
+      ]
     }
   ];
 }];

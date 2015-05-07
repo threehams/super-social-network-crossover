@@ -1,6 +1,6 @@
 'use strict';
 
-describe('tweet', function() {
+describe('googlePost', function() {
   var that = this;
 
   beforeEach(angular.mock.module('SocialCrossover'));
@@ -8,7 +8,7 @@ describe('tweet', function() {
     that.$compile = _$compile_;
     that.scope = $rootScope.$new();
 
-    that.element = angular.element('<tweet></tweet>');
+    that.element = angular.element('<google-post></google-post>');
     that.element = that.$compile(that.element)(that.scope);
     that.scope.$digest();
     that.isolate = that.element.isolateScope();
