@@ -32,37 +32,6 @@ module.exports = [function () {
  *   Report
  */
 
-/* ANATOMY OF A FACEBOOK POST
- *
- * User icon
- * User name
- * Time
- * Privacy setting
- *
- * Text (high limit)
- * Image with lightbox link
- *
- * Like
- * Comment
- * Share
- *
- * Likers
- *
- * Comments
- *   User icon
- *   User name
- *   Text (high limit)
- *   Image
- *   Time
- *   Like
- *   Likers
- * Comment box
- *   User icon
- *   Attach photo
- *   Post a sticker
- *
- */
-
 /*
  * ANATOMY OF A MYSPACE POST (the old kind)
  * http://i49.servimg.com/u/f49/12/29/16/65/boapos10.jpg
@@ -79,44 +48,6 @@ module.exports = [function () {
  * ANATOMY OF A LINKEDIN POST
  *
  *
- */
-
-/*
- * ANATOMY OF A GOOGLE+ POST
- *
- * User icon
- * User name
- * Privacy setting (circle)
- * Time
- *
- * Text
- * Image
- * Video
- *
- * +1
- * Share
- * Add comment
- *
- * Comment count
- * Show/hide comments
- *
- * Comments
- *   Comment
- *     User icon
- *     User name
- *     Time
- *     +1 count
- *     +1 button
- *     Text
- *     On hover:
- *       Reply
- *       Flag
- *   Add comment box
- *     User icon
- *     Comment box
- *
- *     Post comment
- *     Cancel
  */
 
 /*

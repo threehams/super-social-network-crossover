@@ -16,7 +16,7 @@ app.controller('PageController', require('./pages/page/page-controller.js'));
 app.directive('tweet', require('./components/tweet/tweet'));
 app.controller('TweetController', require('./components/tweet/tweet-controller.js'));
 app.directive('facebookPost', require('./components/facebook-post/facebook-post'));
-app.controller('TweetController', require('./components/facebook-post/facebook-post-controller.js'));
+app.controller('FacebookPostController', require('./components/facebook-post/facebook-post-controller.js'));
 
 // resources
 app.factory('ResourceService', require('./services/resource-service'));

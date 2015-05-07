@@ -5,7 +5,9 @@
   "main": "index.js",
   "engine": "node 0.12.2",
   "scripts": {
-    "gulp": "node --harmony-generators ./node_modules/gulp/bin/gulp.js"
+    "gulp": "node --harmony-generators ./node_modules/gulp/bin/gulp.js",
+    "start": "node --harmony-generators server",
+    "postinstall": "node scripts/post-install.js"
   },
   "repository": {
     "type": "git",
