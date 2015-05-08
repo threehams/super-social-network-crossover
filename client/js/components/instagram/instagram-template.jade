@@ -14,20 +14,20 @@
     .instagram-like.fa.fa-heart
     .instagram-actions.fa.fa-ellipsis-h
     .instagram-activity(ng-if='vm.data.likes.length > 0')
-      span(ng-if='vm.data.likes.length === 1')
+      div(ng-if='vm.data.likes.length === 1')
         a(href='#') {{ vm.data.likes[0].username }}
         |  likes this.
-      span(ng-if='vm.data.likes.length === 2')
+      div(ng-if='vm.data.likes.length === 2')
         a(href='#') {{ vm.data.likes[0].username }}
         |  and&nbsp;
         a(href='#') {{ vm.data.likes[1].username }}
         |  like this.
-      span(ng-if='vm.data.likes.length === 3')
+      div(ng-if='vm.data.likes.length === 3')
         a(href='#') {{ vm.data.likes[0].username }}
         |  and&nbsp;
         a(href='#') {{ vm.data.likes.length - 1 }} others
         |  like this.
-      span(ng-if='vm.data.likes.length > 3')
+      div(ng-if='vm.data.likes.length > 3')
         a(href='#') {{ vm.data.likes[0].username }}
         | ,&nbsp;
         a(href='#') {{ vm.data.likes[1].username }}
