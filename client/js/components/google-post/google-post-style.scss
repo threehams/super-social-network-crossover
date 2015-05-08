@@ -2,16 +2,21 @@ $google-post-background: white;
 $google-post-comments-bg-color: #f5f5f5;
 $google-post-border-radius: 2px;
 $google-post-border: 1px solid #dddddd;
+$google-post-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 $google-post-padding: 20px;
 
 .google-post {
-  letter-spacing: normal;
-  font-size: 90%;
-  width: 600px;
-  margin: 5px auto;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  border-radius: $google-post-border-radius;
   background-color: $google-post-background;
+  border-radius: $google-post-border-radius;
+  box-shadow: $google-post-shadow;
+  font-size: 90%;
+  letter-spacing: normal;
+  margin: 5px auto;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
 }
 
 .google-post-user-image {
@@ -57,6 +62,7 @@ $google-post-padding: 20px;
 .google-post-action {
   border: $google-post-border;
   border-radius: 4px;
+  box-shadow: $google-post-shadow;
   color: $font-secondary;
   display: inline-block;
   font-weight: 700;

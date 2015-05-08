@@ -27,9 +27,9 @@
         |  likes this.
       span(ng-if='vm.data.likes.length === 2')
         a(href='#') {{ vm.data.likes[0].username }}
-        |  and&nbsp;
+        | and&nbsp;
         a(href='#') {{ vm.data.likes[1].username }}
-        |  like this.
+        | like this.
       span(ng-if='vm.data.likes.length === 3')
         a(href='#') {{ vm.data.likes[0].username }}
         |  and&nbsp;
@@ -52,6 +52,6 @@
           br
           a.facebook-post-divider(href='#') Like
           a.facebook-post-divider(href='#') Reply
-          a.facebook-post-divider(href='#')
+          a.facebook-post-divider(href='#', ng-if='comment.likes.length')
             i.fa.fa-thumbs-o-up  {{ comment.likes.length }}
-          a.facebook-post-divider  {{ comment.createdAt | date: "MMMM d 'at' hh:mma" }}
+          span.facebook-post-detail {{ comment.createdAt | date: "MMMM d 'at' hh:mma" }}

@@ -39,7 +39,7 @@ module.exports = [function () {
       video: null,
       likes: [
         {
-          username: 'Jenny 188'
+          username: 'Jenny OneEightEight'
         },
         {
           username: 'Pork Products'
@@ -51,7 +51,7 @@ module.exports = [function () {
       commentsCount: 10,
       comments: [
         {
-          username: 'Jenny 188',
+          username: 'Jenny OneEightEight',
           userImage: 'http://www.placecage.com/40/40',
           message: 'SQUEEEEEEE!!!!',
           createdAt: new Date(),
@@ -106,6 +106,36 @@ module.exports = [function () {
         },
         {
           userImage: 'http://www.placecage.com/28/28'
+        }
+      ]
+    }
+  ];
+  vm.instagrams = [
+    {
+      username: 'ipsumgram',
+      userImage: 'http://www.placecage.com/150/150',
+      image: 'http://www.placecage.com/640/640',
+      video: null,
+      createdAt: new Date(),
+      message: 'I made a burrito',
+      likes: [
+        {
+          username: 'yourmom'
+        },
+        {
+          username: 'yourdad'
+        }
+      ],
+      comments: [
+        {
+          username: 'abesandwich',
+          userImage: 'http://www.placecage.com/40/40',
+          message: 'This isn\'t a burrito, I thought this was going to be a burrito'
+        },
+        {
+          username: 'toomanyhams',
+          userImage: 'http://www.placecage.com/40/40',
+          message: 'Not enough hams'
         }
       ]
     }

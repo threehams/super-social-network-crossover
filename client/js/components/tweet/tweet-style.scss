@@ -1,3 +1,5 @@
+$twitter-border-light: 1px solid rgba(0, 0, 0, 0.15);
+
 .dot-before:before {
   content: "\00b7";
   margin: 0 5px 0 0;
@@ -5,12 +7,17 @@
 
 .tweet-container {
   background-color: white;
+  border: $twitter-border-light;
   border-radius: 10px;
   box-sizing: border-box;
   position: relative;
   margin: 5px auto;
   padding: 12px;
-  width: 600px;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
 }
 
 .tweet-user-image {

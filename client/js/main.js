@@ -19,6 +19,8 @@ app.directive('facebookPost', require('./components/facebook-post/facebook-post'
 app.controller('FacebookPostController', require('./components/facebook-post/facebook-post-controller.js'));
 app.directive('googlePost', require('./components/google-post/google-post'));
 app.controller('GooglePostController', require('./components/google-post/google-post-controller.js'));
+app.directive('instagram', require('./components/instagram/instagram'));
+app.controller('InstagramController', require('./components/instagram/instagram-controller.js'));
 
 // resources
 app.factory('ResourceService', require('./services/resource-service'));

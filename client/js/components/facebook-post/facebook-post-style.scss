@@ -1,14 +1,20 @@
 $facebook-post-comment-bg-color: #F6F7F8;
 $facebook-post-main-bg-color: white;
 $facebook-post-padding: 10px;
-$facebook-post-border-radius: 8px;
-$facebook-post-border: $border-thin;
+$facebook-post-border-radius: 5px;
+$facebook-post-border: 1px solid rgba(0, 0, 0, 0.1);;
 
 .facebook-post {
+  border: $facebook-post-border;
+  border-radius: $facebook-post-border-radius;
   font-size: 90%;
   margin: 5px auto;
-  width: 600px;
   vertical-align: top;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
 }
 
 .facebook-post-upper {

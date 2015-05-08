@@ -1,0 +1,47 @@
+.instagram
+  .instagram-details
+    img.instagram-user-image(ng-src='{{ vm.data.userImage }}')
+    a(href='#').instagram-username {{ vm.data.username }}
+    br
+    span.instagram-detail {{ vm.data.createdAt | date: 'MMM d, yyyy' }}
+    br
+    span.instagram-detail(ng-if='vm.data.location') {{ vm.data.location }}
+
+  img.instagram-image(ng-src='{{ vm.data.image }}', ng-if='vm.data.image')
+  video(ng-src='{{ vm.data.video }}', ng-if='vm.data.video')
+
+  .instagram-interaction.clearfix
+    .instagram-like.fa.fa-heart
+    .instagram-actions.fa.fa-ellipsis-h
+    .instagram-activity(ng-if='vm.data.likes.length > 0')
+      span(ng-if='vm.data.likes.length === 1')
+        a(href='#') {{ vm.data.likes[0].username }}
+        |  likes this.
+      span(ng-if='vm.data.likes.length === 2')
+        a(href='#') {{ vm.data.likes[0].username }}
+        |  and&nbsp;
+        a(href='#') {{ vm.data.likes[1].username }}
+        |  like this.
+      span(ng-if='vm.data.likes.length === 3')
+        a(href='#') {{ vm.data.likes[0].username }}
+        |  and&nbsp;
+        a(href='#') {{ vm.data.likes.length - 1 }} others
+        |  like this.
+      span(ng-if='vm.data.likes.length > 3')
+        a(href='#') {{ vm.data.likes[0].username }}
+        | ,&nbsp;
+        a(href='#') {{ vm.data.likes[1].username }}
+        |  and&nbsp;
+        a(href='#') {{ vm.data.likes.length - 2 }} others
+        |  like this.
+  .instagram-comment.instagram-message.clearfix
+    img.instagram-comment-user-image(ng-src='{{ vm.data.userImage }}')
+    .instagram-comment-right
+      a.instagram-comment-username(href='#') {{ vm.data.username }}
+      span  {{ vm.data.message }}
+  .instagram-comments
+    .instagram-comment.clearfix(ng-repeat='comment in vm.data.comments')
+      img.instagram-comment-user-image(ng-src='{{ comment.userImage }}')
+      .instagram-comment-right
+        a.instagram-comment-username(href='#') {{ comment.username }}
+        span  {{ comment.message }}
