@@ -51,7 +51,7 @@ $google-post-padding: 20px;
 }
 
 .google-post-interactions {
-  margin: 10px 0;
+  padding: 10px 0;
 }
 
 .google-post-actions {
@@ -79,6 +79,8 @@ $google-post-padding: 20px;
   width: 1000px; // interacts with table-cell to fill remaining width
 
   img {
+    box-sizing: content-box;
+    width: 28px;
     border-radius: 5px;
     display: inline-block;
     vertical-align: top;
@@ -94,7 +96,7 @@ $google-post-padding: 20px;
 }
 
 .google-post-comments {
-  padding: $google-post-padding;
+  padding: 0 $google-post-padding;
   border-top: $google-post-border;
   border-radius: 0 0 $google-post-border-radius $google-post-border-radius;
   background-color: $google-post-comments-bg-color;
@@ -104,11 +106,11 @@ $google-post-padding: 20px;
   padding: 10px 0;
 
   &:first-child {
-    padding-top: 10px;
+    padding-top: 15px;
   }
 
   &:last-child {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 }
 

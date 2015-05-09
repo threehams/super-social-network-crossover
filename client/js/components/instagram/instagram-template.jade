@@ -13,26 +13,26 @@
   .instagram-interaction.clearfix
     .instagram-like.fa.fa-heart
     .instagram-actions.fa.fa-ellipsis-h
-    .instagram-activity(ng-if='vm.data.likes.length > 0')
-      div(ng-if='vm.data.likes.length === 1')
-        a(href='#') {{ vm.data.likes[0].username }}
+    .instagram-activity(ng-if='vm.data.favorites.length > 0')
+      div(ng-if='vm.data.favorites.length === 1')
+        a(href='#') {{ vm.data.favorites[0].username }}
         |  likes this.
-      div(ng-if='vm.data.likes.length === 2')
-        a(href='#') {{ vm.data.likes[0].username }}
+      div(ng-if='vm.data.favorites.length === 2')
+        a(href='#') {{ vm.data.favorites[0].username }}
         |  and&nbsp;
-        a(href='#') {{ vm.data.likes[1].username }}
+        a(href='#') {{ vm.data.favorites[1].username }}
         |  like this.
-      div(ng-if='vm.data.likes.length === 3')
-        a(href='#') {{ vm.data.likes[0].username }}
+      div(ng-if='vm.data.favorites.length === 3')
+        a(href='#') {{ vm.data.favorites[0].username }}
         |  and&nbsp;
-        a(href='#') {{ vm.data.likes.length - 1 }} others
+        a(href='#') {{ vm.data.favorites.length - 1 }} others
         |  like this.
-      div(ng-if='vm.data.likes.length > 3')
-        a(href='#') {{ vm.data.likes[0].username }}
+      div(ng-if='vm.data.favorites.length > 3')
+        a(href='#') {{ vm.data.favorites[0].username }}
         | ,&nbsp;
-        a(href='#') {{ vm.data.likes[1].username }}
+        a(href='#') {{ vm.data.favorites[1].username }}
         |  and&nbsp;
-        a(href='#') {{ vm.data.likes.length - 2 }} others
+        a(href='#') {{ vm.data.favorites.length - 2 }} others
         |  like this.
   .instagram-comment.instagram-message.clearfix
     img.instagram-comment-user-image(ng-src='{{ vm.data.userImage }}')

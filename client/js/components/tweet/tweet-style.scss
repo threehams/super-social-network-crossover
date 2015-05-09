@@ -1,4 +1,7 @@
-$twitter-border-light: 1px solid rgba(0, 0, 0, 0.15);
+$tweet-border-light: 1px solid rgba(0, 0, 0, 0.15);
+$tweet-left-width: 58px;
+$tweet-padding: 12px;
+$tweet-border-radius: 10px;
 
 .dot-before:before {
   content: "\00b7";
@@ -7,12 +10,11 @@ $twitter-border-light: 1px solid rgba(0, 0, 0, 0.15);
 
 .tweet-container {
   background-color: white;
-  border: $twitter-border-light;
-  border-radius: 10px;
+  border: $tweet-border-light;
+  border-radius: $tweet-border-radius;
   box-sizing: border-box;
   position: relative;
   margin: 5px auto;
-  padding: 12px;
   width: 100%;
 
   @include desktop {
@@ -20,15 +22,18 @@ $twitter-border-light: 1px solid rgba(0, 0, 0, 0.15);
   }
 }
 
-.tweet-user-image {
-  border-radius: 5px;
-  float: left;
-  margin: 0 10px 0 0;
-  width: 48px;
+.tweet-main {
+  padding: $tweet-padding;
+  background-color: white;
+  border-radius: $tweet-border-radius $tweet-border-radius 0 0;
 }
 
-.tweet-user-info > span {
-  margin-right: 5px;
+.tweet-user-image {
+  $width: 48px;
+  border-radius: 5px;
+  float: left;
+  margin: 0 $tweet-left-width - $width 0 0;
+  width: $width;
 }
 
 .tweet-inner {
@@ -53,6 +58,10 @@ $twitter-border-light: 1px solid rgba(0, 0, 0, 0.15);
 
 .tweet-username {
   color: $font-secondary;
+
+  &:before {
+    content: "@";
+  }
 }
 
 .tweet-created-at {
@@ -112,10 +121,40 @@ $twitter-border-light: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .tweet-actions {
-  font-size: 20px;
-  color: $font-tertiary;
+  .fa {
+    color: $font-secondary;
+    font-size: 80%;
+    font-weight: 700;
+    margin: 6px 0;
+    width: 60px;
 
-  & > i {
-    margin: 10px 34px 10px 0;
+    &:before {
+      margin-right: 9px;
+      font-size: 20px;
+      color: $font-tertiary;
+      vertical-align: middle;
+    }
   }
+}
+
+.tweet-comments {
+  background-color: #f5f8fa;
+  border-radius: 0 0 $tweet-border-radius $tweet-border-radius;
+}
+
+.tweet-comment {
+  border-top: $tweet-border-light;
+  padding: 10px $tweet-padding;
+}
+
+.tweet-comment-user-image {
+  $width: 32px;
+  @extend .tweet-user-image;
+
+  width: $width;
+  margin-right: $tweet-left-width - $width;
+}
+
+.tweet-comment-content {
+  display: table-cell;
 }

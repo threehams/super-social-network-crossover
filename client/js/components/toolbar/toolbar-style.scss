@@ -1,0 +1,28 @@
+.toolbar {
+  background-color: $primary;
+  padding: 0 200px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+  .fa {
+    color: white;
+    display: inline-block;
+    font-size: 24px;
+    margin: 5px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    vertical-align: middle;
+  }
+
+  .toolbar-home {
+    float: left;
+  }
+
+  .toolbar-messages {
+    float: right;
+  }
+
+  form {
+    display: inline-block;
+  }
+}

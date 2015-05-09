@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = [function () {
+module.exports = ['$scope', function ($scope) {
   var vm = this;
 
 }];

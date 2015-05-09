@@ -103,7 +103,7 @@ $instagram-text-shadow: 0 2px 1px white;
 
 .instagram-comment {
   width: 100%;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 
   &:first-child {
     margin-top: 10px;
@@ -121,7 +121,7 @@ $instagram-text-shadow: 0 2px 1px white;
 
 .instagram-comment-right {
   display: table-cell;
-  padding: 3px 0;
+  padding: 3px 10px 0 0;
 }
 
 .instagram-comment-username {

@@ -1,7 +1,23 @@
-div.page-header
+toolbar(friend-requests='vm.requests', messages='vm.messages')
 div.page-container
-  tweet(ng-repeat='tweet in vm.tweets', data='tweet')
-  facebook-post(ng-repeat='post in vm.facebookPosts', data='post')
-  google-post(ng-repeat='post in vm.googlePosts', data='post')
-  instagram(ng-repeat='post in vm.instagrams', data='post')
+  form.css-form.create-post-form
+    .form-group
+      label(for='postType') Type
+      select(name='postType', ng-model='vm.postType', ng-options='type for type in vm.postTypes')
+    .form-group
+      label(for='commentCount') Comment Count
+      input(name='commentCount', type='number', ng-model='vm.commentCount', max=99)
+    .form-group
+      label(for='favoriteCount') Favorite Count
+      input(name='favoriteCount', type='number', ng-model='vm.favoriteCount', max=99)
+    .form-group
+      label(for='shareCount') Share Count
+      input(name='shareCount', type='number', ng-model='vm.shareCount', max=99)
+    .form-group
+      button(ng-click='vm.createPost()') Create Post
+  .post(ng-repeat='post in vm.posts track by post.id' ng-switch='post.type')
+    tweet(data='post', ng-switch-when='twitter')
+    facebook-post(data='post', ng-switch-when='facebook')
+    google-post(data='post', ng-switch-when='google')
+    instagram(data='post', ng-switch-when='instagram')
 div.page-footer

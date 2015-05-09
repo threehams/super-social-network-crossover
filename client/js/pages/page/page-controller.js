@@ -1,143 +1,136 @@
 'use strict';
 
-module.exports = [function () {
+var FRIENDS = [
+  {
+    username: 'jenny188',
+    fullName: 'Jenny OneEightEight',
+    userImage: 'http://www.placecage.com/c/73/73'
+  },
+  {
+    username: 'porkproducts',
+    fullName: 'Pork Products',
+    userImage: 'http://www.placecage.com/c/73/73'
+  },
+  {
+    username: 'someotherguy',
+    fullName: 'Someother Guy',
+    userImage: 'http://www.placecage.com/c/73/73'
+  },
+  {
+    username: 'jenny188',
+    fullName: 'Jenny OneEightEight',
+    userImage: 'http://lorempixel.com/73/73/'
+  },
+  {
+    username: 'momtwistum',
+    fullName: 'Mom Twitsum',
+    userImage: 'http://www.placecage.com/73/73'
+  },
+  {
+    username: 'dadtwistum',
+    fullName: 'Dad Twitsum',
+    userImage: 'http://www.placecage.com/c/73/73'
+  }
+];
+
+var MESSAGES = [
+  {
+    message: 'I do not like this and I did not mean to like this'
+  },
+  {
+    message: 'Hahaha you look like this guy',
+    image: 'http://www.placecage.com/c/600/400'
+  },
+  {
+    message: 'i don\'t get it'
+  },
+  {
+    message: 'whats a verb'
+  },
+  {
+    message: 'lol'
+  },
+  {
+    message: 'wait then what\'s this',
+    image: 'http://www.placecage.com/600/400'
+  }
+];
+
+module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
   var vm = this;
 
-  vm.tweets = [
-    {
-      id: 'cba1715f-ef2b-4212-a72e-80ee540e1a55',
-      userImage: 'http://www.placecage.com/c/73/73',
-      fullName: 'Lorem Twitsum',
-      username: '@loremtwitsum',
-      message: 'In fermentum urna erat, eget tristique quam porttitor non. Aliquam mattis tellus libero, nec fringilla diam auctor ac volutpat.',
-      createdAt: new Date(),
+  vm.user = new User({
+    username: 'loremtwitsum',
+    fullName: 'Lorem Twitsum',
+    userImage: 'http://www.placecage.com/c/73/73'
+  });
+
+  vm.friends = _.map(_.range(0, 6), function() {
+    return new User(_.sample(FRIENDS));
+  });
+
+  vm.postTypes = Post.TYPES.concat('random');
+  vm.postType = _.sample(vm.postTypes);
+  vm.commentCount = 1;
+
+  vm.createPost = function() {
+    console.log('creating post');
+    var type = vm.postType === 'random' ? _.sample(Post.TYPES) : vm.postType;
+    var post = new Post(vm.user, {
+      type: type,
+      message: _.sample(MESSAGES).message,
       image: 'http://www.placecage.com/600/450',
-      video: null,
-      retweetCount: 42,
-      favoriteCount: 15,
-      relatedUsers: [
-        {
-          userImage: 'http://lorempixel.com/73/73/'
-        },
-        {
-          userImage: 'http://www.placecage.com/73/73'
-        }
-      ]
+      location: 'Los Angeles, CA'
+    });
+    vm.posts.unshift(post);
+
+    _.times(vm.commentCount || 0, function(i) {
+      $timeout(function() {
+        var friend = _.sample(vm.friends);
+        post.addComment(friend, _.sample(MESSAGES));
+      }, (i + 1) * 1000);
+    });
+    _.times(vm.shareCount || 0, function(i) {
+      $timeout(function () {
+        var friend = _.sample(vm.friends);
+        post.share(friend);
+      }, (i + 1) * 700);
+    });
+    _.times(vm.favoriteCount || 0, function(i) {
+      $timeout(function () {
+        var friend = _.sample(vm.friends);
+        post.favorite(friend);
+      }, (i + 1) * 500);
+    });
+  };
+
+  vm.posts = [];
+  _.times(1, function() {
+    vm.createPost();
+  });
+
+  vm.messages = [
+    {
+      username: 'Lorem Twitsum',
+      userImage: 'http://www.placecage.com/80/80',
+      message: 'why aren\'t you talking to me',
+      createdAt: new Date()
+    },
+    {
+      username: 'Lorem Twitsum',
+      userImage: 'http://www.placecage.com/80/80',
+      message: 'why haven\'t you liked my photo yet',
+      createdAt: new Date()
     }
   ];
-
-  vm.facebookPosts = [
+  vm.friendRequests = [
     {
-      id: 'cba1715f-ef2b-4212-a72e-80ee540e1a55',
-      userImage: 'http://www.placecage.com/c/40/40',
-      fullName: 'Lorem Facesum',
-      message: 'In fermentum urna erat, eget tristique quam porttitor non. Aliquam mattis tellus libero, nec fringilla diam auctor ac volutpat.',
-      createdAt: new Date(),
-      location: 'Los Angeles, CA',
-      privacy: 'friends', // public, private
-      image: 'http://www.placecage.com/c/470/300',
-      video: null,
-      likes: [
-        {
-          username: 'Jenny OneEightEight'
-        },
-        {
-          username: 'Pork Products'
-        },
-        {
-          username: 'Someother Guy'
-        }
-      ],
-      commentsCount: 10,
-      comments: [
-        {
-          username: 'Jenny OneEightEight',
-          userImage: 'http://www.placecage.com/40/40',
-          message: 'SQUEEEEEEE!!!!',
-          createdAt: new Date(),
-          likes: [
-            {
-              username: 'Pork Products'
-            }
-          ]
-        },
-        {
-          username: 'Pork Products',
-          userImage: 'http://www.placecage.com/40/40',
-          message: 'I do not like this and I did not mean to like this',
-          createdAt: new Date(),
-          likes: null
-        }
-      ]
-    }
-  ];
-  vm.googlePosts = [
+      fullName: 'Your Grandmother',
+      createdAt: new Date()
+    },
     {
-      userImage: 'http://www.placecage.com/c/46/46',
-      fullName: 'Lorem Googsum',
-      privacy: 'Close Friends', // can be anything - it's a self-defined circle
-      createdAt: new Date(),
-
-      message: 'In fermentum urna erat, eget tristique quam porttitor non. Aliquam mattis tellus libero, nec fringilla diam auctor ac volutpat.',
-      image: 'http://www.placecage.com/506/400',
-      video: null,
-
-      plusOneCount: 3,
-      sharesCount: 1,
-      comments: [
-        {
-          userImage: 'http://www.placecage.com/40/40',
-          username: 'Nick Cage',
-          createdAt: new Date(),
-          plusOneCount: 1,
-          message: 'LOL'
-        },
-        {
-          userImage: 'http://www.placecage.com/40/40',
-          username: 'Dick Ipsum',
-          createdAt: new Date(),
-          plusOneCount: 4,
-          message: 'u should use bacon ipsum'
-        }
-      ],
-      relatedUsers: [
-        {
-          userImage: 'http://lorempixel.com/28/28/'
-        },
-        {
-          userImage: 'http://www.placecage.com/28/28'
-        }
-      ]
-    }
-  ];
-  vm.instagrams = [
-    {
-      username: 'ipsumgram',
-      userImage: 'http://www.placecage.com/150/150',
-      image: 'http://www.placecage.com/640/640',
-      video: null,
-      createdAt: new Date(),
-      message: 'I made a burrito',
-      likes: [
-        {
-          username: 'yourmom'
-        },
-        {
-          username: 'yourdad'
-        }
-      ],
-      comments: [
-        {
-          username: 'abesandwich',
-          userImage: 'http://www.placecage.com/40/40',
-          message: 'This isn\'t a burrito, I thought this was going to be a burrito'
-        },
-        {
-          username: 'toomanyhams',
-          userImage: 'http://www.placecage.com/40/40',
-          message: 'Not enough hams'
-        }
-      ]
+      fullName: 'Your Mother',
+      createdAt: new Date()
     }
   ];
 }];

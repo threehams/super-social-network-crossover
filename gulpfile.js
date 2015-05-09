@@ -61,6 +61,7 @@ gulp.task('deploy-vendor', function() {
 function buildVendor() {
   return browserify()
     .require('lodash')
+    .require('node-uuid')
     .require('angular')
     .require('angular-route')
     .require('angular-animate')
@@ -74,6 +75,7 @@ gulp.task('deploy-bundle', function() {
   return browserify()
     .add('./client/js/main.js')
     .external('lodash')
+    .external('node-uuid')
     .external('angular')
     .external('angular-route')
     .external('angular-animate')
@@ -104,6 +106,7 @@ gulp.task('watch', function () {
   bundler
     .add('./client/js/main.js')
     .external('lodash')
+    .external('node-uuid')
     .external('angular')
     .external('angular-route')
     .external('angular-animate')

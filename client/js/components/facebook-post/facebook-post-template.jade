@@ -19,28 +19,28 @@
     a.facebook-post-action.facebook-post-divider(href='#') Comment
     a.facebook-post-action.facebook-post-divider(href='#') Share
 
-  .facebook-post-lower
-    .facebook-post-likes(ng-if='vm.data.likes.length > 0')
+  .facebook-post-lower(ng-if='vm.data.favorites.length || vm.data.comments.length')
+    .facebook-post-likes(ng-if='vm.data.favorites.length > 0')
       i.fa.fa-thumbs-o-up.facebook-blue &nbsp;
-      span(ng-if='vm.data.likes.length === 1')
-        a(href='#') {{ vm.data.likes[0].username }}
+      span(ng-if='vm.data.favorites.length === 1')
+        a(href='#') {{ vm.data.favorites[0].username }}
         |  likes this.
-      span(ng-if='vm.data.likes.length === 2')
-        a(href='#') {{ vm.data.likes[0].username }}
+      span(ng-if='vm.data.favorites.length === 2')
+        a(href='#') {{ vm.data.favorites[0].username }}
         | and&nbsp;
-        a(href='#') {{ vm.data.likes[1].username }}
+        a(href='#') {{ vm.data.favorites[1].username }}
         | like this.
-      span(ng-if='vm.data.likes.length === 3')
-        a(href='#') {{ vm.data.likes[0].username }}
+      span(ng-if='vm.data.favorites.length === 3')
+        a(href='#') {{ vm.data.favorites[0].username }}
         |  and&nbsp;
-        a(href='#') {{ vm.data.likes.length - 1 }} others
+        a(href='#') {{ vm.data.favorites.length - 1 }} others
         |  like this.
-      span(ng-if='vm.data.likes.length > 3')
-        a(href='#') {{ vm.data.likes[0].username }}
+      span(ng-if='vm.data.favorites.length > 3')
+        a(href='#') {{ vm.data.favorites[0].username }}
         | ,&nbsp;
-        a(href='#') {{ vm.data.likes[1].username }}
+        a(href='#') {{ vm.data.favorites[1].username }}
         |  and&nbsp;
-        a(href='#') {{ vm.data.likes.length - 2 }} others
+        a(href='#') {{ vm.data.favorites.length - 2 }} others
         |  like this.
 
     div
@@ -52,6 +52,6 @@
           br
           a.facebook-post-divider(href='#') Like
           a.facebook-post-divider(href='#') Reply
-          a.facebook-post-divider(href='#', ng-if='comment.likes.length')
-            i.fa.fa-thumbs-o-up  {{ comment.likes.length }}
+          a.facebook-post-divider(href='#', ng-if='comment.favorites.length')
+            i.fa.fa-thumbs-o-up  {{ comment.favorites.length }}
           span.facebook-post-detail {{ comment.createdAt | date: "MMMM d 'at' hh:mma" }}

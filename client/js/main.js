@@ -21,9 +21,15 @@ app.directive('googlePost', require('./components/google-post/google-post'));
 app.controller('GooglePostController', require('./components/google-post/google-post-controller.js'));
 app.directive('instagram', require('./components/instagram/instagram'));
 app.controller('InstagramController', require('./components/instagram/instagram-controller.js'));
+app.directive('toolbar', require('./components/toolbar/toolbar'));
+app.controller('ToolbarController', require('./components/toolbar/toolbar-controller.js'));
 
 // resources
-app.factory('ResourceService', require('./services/resource-service'));
+//app.factory('ResourceService', require('./services/resource-service'));
+app.service('UUID', require('./services/uuid-service'));
+app.factory('Post', require('./services/post-service'));
+app.factory('Comment', require('./services/comment-service'));
+app.factory('User', require('./services/user-service'));
 
 // custom validators
 app.directive('match', require('./validators/match'));
