@@ -27,9 +27,9 @@
         |  likes this.
       span(ng-if='vm.data.favorites.length === 2')
         a(href='#') {{ vm.data.favorites[0].username }}
-        | and&nbsp;
+        |  and&nbsp;
         a(href='#') {{ vm.data.favorites[1].username }}
-        | like this.
+        |  like this.
       span(ng-if='vm.data.favorites.length === 3')
         a(href='#') {{ vm.data.favorites[0].username }}
         |  and&nbsp;

@@ -74,7 +74,6 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
   vm.commentCount = 1;
 
   vm.createPost = function() {
-    console.log('creating post');
     var type = vm.postType === 'random' ? _.sample(Post.TYPES) : vm.postType;
     var post = new Post(vm.user, {
       type: type,
