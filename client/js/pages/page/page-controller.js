@@ -22,12 +22,12 @@ var FRIENDS = [
     userImage: 'http://lorempixel.com/73/73/'
   },
   {
-    username: 'momtwistum',
+    username: 'momtwitsum',
     fullName: 'Mom Twitsum',
     userImage: 'http://www.placecage.com/73/73'
   },
   {
-    username: 'dadtwistum',
+    username: 'dadtwitsum',
     fullName: 'Dad Twitsum',
     userImage: 'http://www.placecage.com/c/73/73'
   }
@@ -65,12 +65,12 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
     userImage: 'http://www.placecage.com/c/73/73'
   });
 
-  vm.friends = _.map(_.range(0, 6), function() {
-    return new User(_.sample(FRIENDS));
+  vm.friends = _.map(FRIENDS, function(friendAttrs) {
+    return new User(friendAttrs);
   });
 
   vm.postTypes = Post.TYPES.concat('random');
-  vm.postType = _.sample(vm.postTypes);
+  vm.postType = 'random';
   vm.commentCount = 1;
 
   vm.createPost = function() {
