@@ -1,0 +1,107 @@
+$facebook-post-comment-bg-color: #F6F7F8;
+$facebook-post-main-bg-color: white;
+$facebook-post-padding: 10px;
+$facebook-post-border-radius: 5px;
+$facebook-post-border: 1px solid rgba(0, 0, 0, 0.1);;
+
+.facebook-post {
+  border: $facebook-post-border;
+  border-radius: $facebook-post-border-radius;
+  font-size: 90%;
+  margin: 5px auto;
+  vertical-align: top;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
+}
+
+.facebook-post-upper {
+  background-color: $facebook-post-main-bg-color;
+  border-bottom: $facebook-post-border;
+  border-radius: $facebook-post-border-radius $facebook-post-border-radius 0 0;
+  padding: $facebook-post-padding;
+}
+
+.facebook-post-lower {
+  border-radius: 0 0 $facebook-post-border-radius $facebook-post-border-radius;
+  background-color: $facebook-post-comment-bg-color;
+  padding: $facebook-post-padding;
+}
+
+.facebook-post-basic {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.facebook-post-full-name {
+  font-weight: 700;
+}
+
+.facebook-post-detail {
+  color: $font-secondary;
+}
+
+.facebook-post-message {
+  margin: 10px 0;
+}
+
+.facebook-post-image {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.facebook-post-action {
+  color: $font-secondary;
+
+  &:not(:last-of-type):after {
+    margin: 0 5px;
+    content: "\00b7";
+  }
+}
+
+.facebook-blue {
+  color: $link-color;
+}
+
+.facebook-post-likes {
+  padding-bottom: 8px;
+  border-bottom: $facebook-post-border;
+}
+
+.facebook-post-comment {
+  padding: 5px 0;
+
+  &:first-child {
+    padding-top: 10px;
+  }
+
+  &:last-child {
+    padding-bottom: 10px;
+  }
+}
+
+.facebook-post-comment-user-image {
+  width: 32px;
+  float: left;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.facebook-post-comment-right {
+  display: table-cell;
+}
+
+.facebook-post-divider {
+  &:not(:last-child):after {
+    margin: 0 5px;
+    content: "\00b7";
+  }
+}
+
+.facebook-post-comment-username {
+  font-weight: 700;
+}

@@ -1,0 +1,10 @@
+.toolbar
+  .fa.fa-home.toolbar-home
+  .toolbar-messages
+    i.fa.fa-users.toolbar-friend-requests-facebook
+    i.fa.fa-gratipay.toolbar-friend-requests-instagram
+    i.fa.fa-inbox.toolbar-messages-facebook
+    i.fa.fa-envelope.toolbar-messages-twitter
+  form.toolbar-search-form.css-form(name='vm.searchForm', novalidate)
+    input(type='text', ng-model='vm.searchText', required)
+    button(type='button', ng-click='vm.search()').fa.fa-search

@@ -1,0 +1,18 @@
+.form-group {
+  display: inline-block;
+  padding: 0 10px;
+
+  label {
+    font-size: 90%;
+    display: block;
+  }
+  input, select {
+    display: inline-block;
+  }
+}
+
+.create-post-form {
+  //max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}

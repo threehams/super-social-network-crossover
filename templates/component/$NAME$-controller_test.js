@@ -1,13 +1,13 @@
 'use strict';
 
-describe('ComponentController', function() {
+describe('$NAME_UPPERCASE$Controller', function() {
   var that = this;
 
-  beforeEach(angular.mock.module('SampleApp'));
+  beforeEach(angular.mock.module('$APPNAME$'));
   beforeEach(inject(function($rootScope, _$controller_) {
     that.scope = $rootScope;
     that.controller = _$controller_;
-    that.controller('ComponentController as vm', {'$scope': that.scope});
+    that.controller('$NAME_UPPERCASE$Controller as vm', {'$scope': that.scope});
   }));
 
   it('creates a scope', function() {

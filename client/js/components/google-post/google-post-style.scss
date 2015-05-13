@@ -1,0 +1,157 @@
+$google-post-background: white;
+$google-post-comments-bg-color: #f5f5f5;
+$google-post-border-radius: 2px;
+$google-post-border: 1px solid #dddddd;
+$google-post-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+$google-post-padding: 20px;
+
+.google-post {
+  background-color: $google-post-background;
+  border-radius: $google-post-border-radius;
+  box-shadow: $google-post-shadow;
+  font-size: 90%;
+  letter-spacing: normal;
+  margin: 5px auto;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
+}
+
+.google-post-user-image {
+  border-radius: 50%;
+}
+
+.google-post-full-name {
+  font-weight: 700;
+
+  &:link, &:visited, &:active {
+    color: $font-main;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.google-post-details {
+  display: inline-block;
+  margin: 0 0 25px 10px;
+  vertical-align: top;
+}
+
+.google-post-detail {
+  color: $font-secondary;
+  font-size: 90%;
+}
+
+.google-post-upper {
+  padding: $google-post-padding;
+}
+
+.google-post-interactions {
+  padding: 10px 0;
+}
+
+.google-post-actions {
+  float: left;
+  margin-left: 20px;
+}
+
+.google-post-action {
+  border: $google-post-border;
+  border-radius: 4px;
+  box-shadow: $google-post-shadow;
+  color: $font-secondary;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0 5px;
+  height: 30px;
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.google-post-activity {
+  display: table-cell;
+  padding-right: 20px;
+  text-align: right;
+  width: 1000px; // interacts with table-cell to fill remaining width
+
+  img {
+    box-sizing: content-box;
+    width: 28px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 3px;
+  }
+}
+
+.google-post-media {
+  padding: 0 5px;
+  img {
+    width: 100%;
+  }
+}
+
+.google-post-comments {
+  padding: 0 $google-post-padding;
+  border-top: $google-post-border;
+  border-radius: 0 0 $google-post-border-radius $google-post-border-radius;
+  background-color: $google-post-comments-bg-color;
+}
+
+.google-post-comment {
+  padding: 10px 0;
+
+  &:first-child {
+    padding-top: 15px;
+  }
+
+  &:last-child {
+    padding-bottom: 20px;
+  }
+}
+
+.google-post-comment-user-image {
+  border-radius: 5px;
+  box-sizing: content-box;
+  float: left;
+  margin: 6px 10px;
+  width: 28px;
+}
+
+.google-post-comment-full-name {
+  @extend .google-post-full-name;
+
+  font-size: 95%;
+}
+
+.google-post-comment-plus-one-count {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 90%;
+}
+
+.google-post-comment-plus-one {
+  background-color: white;
+  border: $google-post-border;
+  border-radius: 2px;
+  font-weight: 700;
+  margin-left: 10px;
+  padding: 0 3px;
+}
+
+.google-post-comment-message {
+  display: table-cell;
+  min-height: 60px;
+  width: 1000px;
+  vertical-align: top;
+}
+
+.google-post-divider {
+  &:not(:last-of-type):after {
+    content: " - ";
+  }
+}

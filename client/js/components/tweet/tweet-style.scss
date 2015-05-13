@@ -1,0 +1,160 @@
+$tweet-border-light: 1px solid rgba(0, 0, 0, 0.15);
+$tweet-left-width: 58px;
+$tweet-padding: 12px;
+$tweet-border-radius: 10px;
+
+.dot-before:before {
+  content: "\00b7";
+  margin: 0 5px 0 0;
+}
+
+.tweet-container {
+  background-color: white;
+  border: $tweet-border-light;
+  border-radius: $tweet-border-radius;
+  box-sizing: border-box;
+  position: relative;
+  margin: 5px auto;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
+}
+
+.tweet-main {
+  padding: $tweet-padding;
+  background-color: white;
+  border-radius: $tweet-border-radius $tweet-border-radius 0 0;
+}
+
+.tweet-user-image {
+  $width: 48px;
+  border-radius: 5px;
+  float: left;
+  margin: 0 $tweet-left-width - $width 0 0;
+  width: $width;
+}
+
+.tweet-inner {
+  display: table-cell; // Show content in block next to user icon (block formatting context)
+  margin: 0;
+}
+
+.tweet-message {
+  margin-bottom: 8px;
+}
+
+.tweet-image {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.tweet-full-name {
+  font-weight: 700;
+}
+
+.tweet-username {
+  color: $font-secondary;
+
+  &:before {
+    content: "@";
+  }
+}
+
+.tweet-created-at {
+  color: $font-secondary;
+  font-size: 90%;
+}
+
+// Retweets, favorites, and icons of people who've done either
+
+.tweet-interaction {
+  border-bottom: $border-thin;
+  border-top: $border-thin;
+  width: 100%;
+}
+
+.tweet-retweets {
+  display: inline-block;
+  padding: 3px 15px 5px 0;
+  vertical-align: top;
+}
+
+.tweet-favorites {
+  display: inline-block;
+  padding: 3px 15px 5px 0;
+  vertical-align: top;
+}
+
+.tweet-count-title {
+  color: $font-secondary;
+  font-size: 75%;
+  text-transform: uppercase;
+}
+
+.tweet-count-number {
+  font-size: 120%;
+}
+
+.tweet-users-list {
+  border-left: $border-thin;
+  display: inline-block;
+  padding: 14px;
+
+  & > img {
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0;
+    margin-right: 6px;
+    vertical-align: middle;
+    width: 24px;
+  }
+}
+
+.tweet-details {
+  margin-top: 5px;
+  color: $font-secondary;
+  font-size: 90%;
+}
+
+.tweet-actions {
+  .fa {
+    color: $font-secondary;
+    font-size: 80%;
+    font-weight: 700;
+    margin: 6px 0;
+    width: 60px;
+
+    &:before {
+      margin-right: 9px;
+      font-size: 20px;
+      color: $font-tertiary;
+      vertical-align: middle;
+    }
+  }
+}
+
+.tweet-comments {
+  background-color: #f5f8fa;
+  border-radius: 0 0 $tweet-border-radius $tweet-border-radius;
+}
+
+.tweet-comment {
+  border-top: $tweet-border-light;
+  padding: 10px $tweet-padding;
+}
+
+.tweet-comment-user-image {
+  $width: 32px;
+  @extend .tweet-user-image;
+
+  width: $width;
+  margin-right: $tweet-left-width - $width;
+}
+
+.tweet-comment-content {
+  display: table-cell;
+}

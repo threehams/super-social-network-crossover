@@ -8,6 +8,7 @@
     "expect",
     "it",
     "beforeEach",
-    "inject"
+    "inject",
+    "module"
   ]
 }
