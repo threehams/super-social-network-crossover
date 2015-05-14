@@ -11,7 +11,7 @@
 
         .tweet-message {{ vm.post.message }}
         img.tweet-image(ng-src='{{ vm.post.image }}' ng-if='vm.post.image')
-        div(ng-if='vm.post.video') {{ vm.post.video }}
+        video.tweet-video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' controls)
 
         .tweet-interaction
           .tweet-retweets

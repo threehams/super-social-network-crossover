@@ -27,6 +27,7 @@ $google-post-padding: 20px;
 
 .google-post-user-image {
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .google-post-full-name {
@@ -97,6 +98,11 @@ $google-post-padding: 20px;
 .google-post-media {
   padding: 0 5px;
   img {
+    display: block;
+    width: 100%;
+  }
+  video {
+    display: block;
     width: 100%;
   }
 }

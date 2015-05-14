@@ -79,9 +79,20 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
       type: type,
       message: _.sample(MESSAGES).message,
       tags: ['these', 'are', 'a', 'bunch', 'of', 'tags'],
-      image: 'http://www.placecage.com/600/450',
-      location: 'Los Angeles, CA'
+      location: 'Los Angeles, CA',
+      privacy: 'Friends'
     });
+    var attach;
+    if (vm.postType === 'instagram') {
+      attach = _.random(0, 1);
+    } else {
+      attach = _.random(0, 3);
+    }
+    if (attach === 0) {
+      post.image = 'http://www.placecage.com/600/450';
+    } else if (attach === 1) {
+      post.video = '/vid/not-the-bees.mp4';
+    }
     vm.posts.unshift(post);
 
     _.times(vm.commentCount || 0, function(i) {

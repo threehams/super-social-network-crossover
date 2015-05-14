@@ -11,7 +11,7 @@
       .google-post-message {{ vm.post.message }}
     .google-post-media(ng-if='vm.post.image || vm.post.video')
       img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
-      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' autoplay)
+      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' controls)
     .google-post-interactions.clearfix
       .google-post-actions
         .google-post-action +{{ vm.post.shares.length }}
@@ -25,6 +25,6 @@
           a.google-post-comment-full-name(href='#') {{ comment.username }}
           br
           span.google-post-detail {{ comment.createdAt | date: 'MMMM d, yyyy' }}
-          span.google-post-comment-plus-one-count  +{{ comment.favorites.count }}
+          span.google-post-comment-plus-one-count(ng-if='comment.favorites.count')  +{{ comment.favorites.length }}
           span.google-post-comment-plus-one +1
           div {{ comment.message }}

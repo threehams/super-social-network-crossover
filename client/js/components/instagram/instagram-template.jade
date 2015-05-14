@@ -8,8 +8,8 @@
       br
       span.instagram-detail(ng-if='vm.post.location') {{ vm.post.location }}
 
-    img.instagram-image(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
-    video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video')
+    img.instagram-media(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
+    video.instagram-media(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' controls)
 
     .instagram-interaction.clearfix
       .instagram-like.fa.fa-heart

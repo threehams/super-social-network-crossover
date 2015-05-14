@@ -5,7 +5,7 @@
       .tumblr-post-username {{ vm.post.username }}
     .tumblr-post-media
       img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
-      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video')
+      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' controls)
     .tumblr-post-lower.clearfix
       .tumblr-post-message {{ vm.post.message }}
       .tumblr-post-tags

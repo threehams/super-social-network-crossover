@@ -12,8 +12,8 @@
         span.facebook-post-detail.facebook-post-divider.fa.fa-globe
 
       .facebook-post-message {{ vm.post.message }}
-      img.facebook-post-image(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
-      video.facebook-post-video(ng-if='vm.post.video') {{ vm.post.message }}
+      img.facebook-post-media(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
+      video.facebook-post-media(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' controls)
 
       //.facebook-post-actions
       a.facebook-post-action.facebook-post-divider(href='#') Like
