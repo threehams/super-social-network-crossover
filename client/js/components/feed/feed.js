@@ -4,11 +4,11 @@ module.exports = function() {
   return {
     restrict: 'E',
     scope: {
-      post: '='
+      posts: '='
     },
     replace: true,
-    template: require('./instagram-template.jade'),
-    controller: require('./instagram-controller'),
+    template: require('./feed-template.jade'),
+    controller: require('./feed-controller'),
     controllerAs: 'vm',
     bindToController: true
   };

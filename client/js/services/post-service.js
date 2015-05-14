@@ -12,6 +12,7 @@ var PostService = function($window, UUID, Comment) {
 
     this.privacy = attrs.privacy; // public, private
     this.location = attrs.location;
+    this.tags = attrs.tags; // Tumblr only so far
 
     this.message = attrs.message;
     this.image = attrs.image;
@@ -20,6 +21,7 @@ var PostService = function($window, UUID, Comment) {
     this.shares = [];
     this.favorites = [];
     this.comments = [];
+    this.relatedUsers = [];
   }
 
   Post.prototype.addComment = function(user, attrs) {
@@ -28,22 +30,16 @@ var PostService = function($window, UUID, Comment) {
   };
 
   Post.prototype.share = function (user) {
-    this.shares.push({
-      username: user.username,
-      userImage: user.userImage
-    });
-    this.calculateRelatedUsers();
+    this.shares.push(user);
+    this._calculateRelatedUsers();
   };
 
   Post.prototype.favorite = function (user) {
-    this.favorites.push({
-      username: user.username,
-      userImage: user.userImage
-    });
-    this.calculateRelatedUsers();
+    this.favorites.push(user);
+    this._calculateRelatedUsers();
   };
 
-  Post.prototype.calculateRelatedUsers = function() {
+  Post.prototype._calculateRelatedUsers = function() {
     this.relatedUsers = _.sortBy(this.shares.concat(this.favorites).slice(0, 10), 'createdAt');
   };
 
@@ -51,7 +47,7 @@ var PostService = function($window, UUID, Comment) {
     return $window.localStorage.posts;
   };
 
-  Post.TYPES = ['google', 'facebook', 'instagram', 'twitter'];
+  Post.TYPES = ['google', 'facebook', 'instagram', 'twitter', 'tumblr'];
 
   return Post;
 };

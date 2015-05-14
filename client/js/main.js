@@ -21,8 +21,13 @@ app.directive('googlePost', require('./components/google-post/google-post'));
 app.controller('GooglePostController', require('./components/google-post/google-post-controller.js'));
 app.directive('instagram', require('./components/instagram/instagram'));
 app.controller('InstagramController', require('./components/instagram/instagram-controller.js'));
+app.directive('tumblrPost', require('./components/tumblr-post/tumblr-post'));
+app.controller('TumblrPostController', require('./components/tumblr-post/tumblr-post-controller.js'));
+
 app.directive('toolbar', require('./components/toolbar/toolbar'));
 app.controller('ToolbarController', require('./components/toolbar/toolbar-controller.js'));
+app.directive('feed', require('./components/feed/feed'));
+app.controller('FeedController', require('./components/feed/feed-controller.js'));
 
 // resources
 //app.factory('ResourceService', require('./services/resource-service'));

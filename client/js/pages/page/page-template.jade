@@ -15,9 +15,5 @@ div.page-container
       input(name='shareCount', type='number', ng-model='vm.shareCount', max=99)
     .form-group
       button(ng-click='vm.createPost()') Create Post
-  .post(ng-repeat='post in vm.posts track by post.id' ng-switch='post.type')
-    tweet(data='post', ng-switch-when='twitter')
-    facebook-post(data='post', ng-switch-when='facebook')
-    google-post(data='post', ng-switch-when='google')
-    instagram(data='post', ng-switch-when='instagram')
+  feed(posts='vm.posts')
 div.page-footer

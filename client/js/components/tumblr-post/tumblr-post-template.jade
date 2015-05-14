@@ -1,0 +1,16 @@
+.tumblr-post
+  img.tumblr-post-user-image(ng-src='{{ vm.post.userImage }}')
+  .tumblr-post-info
+    .tumblr-post-username {{ vm.post.username }}
+  .tumblr-post-media
+    img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
+    video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video')
+  .tumblr-post-lower.clearfix
+    .tumblr-post-message {{ vm.post.message }}
+    .tumblr-post-tags
+      .tumblr-post-tag(ng-repeat='tag in vm.post.tags') {{ tag }}
+    .tumblr-post-actions
+      i.fa.fa-ellipsis-h
+      i.fa.fa-retweet
+      i.fa.fa-heart
+    .tumblr-post-notes-count {{ vm.notesCount() }} notes

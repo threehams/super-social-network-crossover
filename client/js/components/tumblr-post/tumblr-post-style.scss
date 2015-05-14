@@ -1,0 +1,83 @@
+$tumblr-post-padding: 10px 20px;
+
+.tumblr-post {
+  background-color: white;
+  border-radius: 6px;
+  margin: 5px auto;
+  position: relative;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
+}
+
+.tumblr-post-user-image {
+  border-radius: 4px;
+  left: -(64px + 24px);
+  position: absolute;
+  width: 64px;
+}
+
+.tumblr-post-username {
+  color: $font-tertiary;
+  font-size: 90%;
+  font-weight: 700;
+}
+
+.tumblr-post-info {
+  padding: $tumblr-post-padding;
+  width: 100%;
+}
+
+.tumblr-post-media {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.tumblr-post-lower {
+  padding: $tumblr-post-padding;
+}
+
+.tumblr-post-message {
+  margin-bottom: 10px;
+}
+
+.tumblr-post-tags {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.tumblr-post-tag {
+  color: $font-tertiary;
+  display: inline-block;
+  font-size: 90%;
+  margin-right: 5px;
+
+  &:before {
+    content: '#';
+  }
+}
+
+.tumblr-post-notes-count {
+  color: $font-tertiary;
+  display: inline-block;
+  font-size: 90%;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.tumblr-post-actions {
+  color: $font-tertiary;
+  display: inline-block;
+  float: right;
+  padding-right: 8px;
+  vertical-align: middle;
+
+  .fa {
+    margin-left: 15px;
+    font-size: 22px;
+  }
+}

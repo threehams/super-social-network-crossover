@@ -78,6 +78,7 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
     var post = new Post(vm.user, {
       type: type,
       message: _.sample(MESSAGES).message,
+      tags: ['these', 'are', 'a', 'bunch', 'of', 'tags'],
       image: 'http://www.placecage.com/600/450',
       location: 'Los Angeles, CA'
     });

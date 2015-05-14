@@ -4,7 +4,7 @@ module.exports = function() {
   return {
     restrict: 'E',
     scope: {
-      data: '='
+      post: '='
     },
     replace: true,
     template: require('./tweet-template.jade'),

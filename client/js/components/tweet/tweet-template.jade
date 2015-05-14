@@ -1,40 +1,40 @@
 .tweet-container
   section.tweet-main
-    img.tweet-user-image(ng-src='{{ vm.data.userImage }}')
+    img.tweet-user-image(ng-src='{{ vm.post.userImage }}')
 
     .tweet-inner
       .tweet-user-info
-        span.tweet-full-name {{ vm.data.fullName }}&nbsp;
-        span.tweet-username {{ vm.data.username }}&nbsp;
-        span.tweet-created-at.dot-before {{ vm.data.createdAt | date: 'MMM d' }}
+        span.tweet-full-name {{ vm.post.fullName }}&nbsp;
+        span.tweet-username {{ vm.post.username }}&nbsp;
+        span.tweet-created-at.dot-before {{ vm.post.createdAt | date: 'MMM d' }}
 
-      .tweet-message {{ vm.data.message }}
-      img.tweet-image(ng-src='{{ vm.data.image }}' ng-if='vm.data.image')
-      div(ng-if='vm.data.video') {{ vm.data.video }}
+      .tweet-message {{ vm.post.message }}
+      img.tweet-image(ng-src='{{ vm.post.image }}' ng-if='vm.post.image')
+      div(ng-if='vm.post.video') {{ vm.post.video }}
 
       .tweet-interaction
         .tweet-retweets
           .tweet-count-title Retweets
-          .tweet-count-number {{ vm.data.shares.length }}
+          .tweet-count-number {{ vm.post.shares.length }}
         .tweet-favorites
           .tweet-count-title Favorites
-          .tweet-count-number {{ vm.data.favorites.length }}
+          .tweet-count-number {{ vm.post.favorites.length }}
         .tweet-users-list
-          img(ng-repeat='user in vm.data.relatedUsers', ng-src='{{ user.userImage }}')
+          img(ng-repeat='user in vm.post.relatedUsers', ng-src='{{ user.userImage }}')
 
       .tweet-details
-        | {{ vm.data.createdAt | date: 'H:mm:ss a - d MMM yyyy ' }}
+        | {{ vm.post.createdAt | date: 'H:mm:ss a - d MMM yyyy ' }}
         span.dot-before Details
 
       ul.tweet-actions
         li.fa.fa-arrow-left
-        li.fa.fa-retweet {{ vm.data.shares.length }}
-        li.fa.fa-star {{ vm.data.favorites.length }}
+        li.fa.fa-retweet {{ vm.post.shares.length }}
+        li.fa.fa-star {{ vm.post.favorites.length }}
         li.fa.fa-user-plus
         li.fa.fa-ellipsis-h
 
   section.tweet-comments
-    .tweet-comment(ng-repeat='comment in vm.data.comments')
+    .tweet-comment(ng-repeat='comment in vm.post.comments')
       img.tweet-comment-user-image(ng-src='{{ comment.userImage }}')
       .tweet-comment-content
         span.tweet-full-name {{ comment.fullName }}&nbsp;
