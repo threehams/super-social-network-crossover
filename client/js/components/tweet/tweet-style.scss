@@ -46,10 +46,12 @@ $tweet-background: #55ACEE;
 .tweet-inner {
   display: table-cell; // Show content in block next to user icon (block formatting context)
   margin: 0;
+  width: 2000px; // ensure width is 100% of parent
 }
 
 .tweet-message {
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .tweet-image {

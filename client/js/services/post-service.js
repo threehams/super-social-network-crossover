@@ -40,7 +40,7 @@ var PostService = function($window, UUID, Comment) {
   };
 
   Post.prototype._calculateRelatedUsers = function() {
-    this.relatedUsers = _.sortBy(this.shares.concat(this.favorites).slice(0, 10), 'createdAt');
+    this.relatedUsers = _.sortBy(_.unique(this.shares.concat(this.favorites)).slice(0, 10), 'createdAt');
   };
 
   Post.index = function() {
