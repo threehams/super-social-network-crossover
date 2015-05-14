@@ -71,7 +71,9 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
 
   vm.postTypes = Post.TYPES.concat('random');
   vm.postType = 'random';
-  vm.commentCount = 1;
+  vm.commentCount = 3;
+  vm.favoriteCount = 5;
+  vm.shareCount = 4;
 
   vm.createPost = function() {
     var type = vm.postType === 'random' ? _.sample(Post.TYPES) : vm.postType;
@@ -83,7 +85,7 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
       privacy: 'Friends'
     });
     var attach;
-    if (vm.postType === 'instagram') {
+    if (type === 'instagram') {
       attach = _.random(0, 1);
     } else {
       attach = _.random(0, 3);
