@@ -1,6 +1,15 @@
 $instagram-border-color: rgba(0, 0, 0, 0.3);
 $instagram-border: 1px solid $instagram-border-color;
 $instagram-text-shadow: 0 2px 1px white;
+$instagram-background: #E0E1E2;
+
+.instagram-background {
+  background-color: $instagram-background;
+  margin: 0 auto;
+  padding: 20px;
+  width: 640px;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
 
 .instagram {
   background-color: white;
@@ -8,7 +17,6 @@ $instagram-text-shadow: 0 2px 1px white;
   border: $instagram-border;
   border-radius: 1px;
   font-size: 90%;
-  margin: 5px auto;
   position: relative;
   width: 100%;
 
@@ -20,7 +28,7 @@ $instagram-text-shadow: 0 2px 1px white;
 .instagram-details {
   display: block;
   width: 200px;
-  left: -220px;
+  left: -240px;
   position: absolute;
   text-align: right;
 }

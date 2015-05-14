@@ -1,29 +1,30 @@
-.google-post
-  .google-post-upper
-    img.google-post-user-image(ng-src='{{ vm.post.userImage }}')
-    .google-post-details
-      a.google-post-full-name(href='#') {{ vm.post.fullName }}
-      br
-      span.google-post-detail.google-post-divider {{ vm.post.privacy }}
-      span.google-post-detail.google-post-divider {{ vm.post.createdAt | date: 'MMMM d, yyyy' }}
-
-    .google-post-message {{ vm.post.message }}
-  .google-post-media(ng-if='vm.post.image || vm.post.video')
-    img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
-    video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' autoplay)
-  .google-post-interactions.clearfix
-    .google-post-actions
-      .google-post-action +{{ vm.post.shares.length }}
-      .google-post-action.fa.fa-share
-    .google-post-activity
-      img(ng-repeat='user in vm.post.relatedUsers', ng-src='{{ user.userImage }}')
-  .google-post-comments(ng-if='vm.post.comments.length')
-    .google-post-comment(ng-repeat='comment in vm.post.comments')
-      img.google-post-comment-user-image(ng-src='{{ comment.userImage }}')
-      .google-post-comment-message
-        a.google-post-comment-full-name(href='#') {{ comment.username }}
+.google-post-background
+  .google-post
+    .google-post-upper
+      img.google-post-user-image(ng-src='{{ vm.post.userImage }}')
+      .google-post-details
+        a.google-post-full-name(href='#') {{ vm.post.fullName }}
         br
-        span.google-post-detail {{ comment.createdAt | date: 'MMMM d, yyyy' }}
-        span.google-post-comment-plus-one-count  +{{ comment.favorites.count }}
-        span.google-post-comment-plus-one +1
-        div {{ comment.message }}
+        span.google-post-detail.google-post-divider {{ vm.post.privacy }}
+        span.google-post-detail.google-post-divider {{ vm.post.createdAt | date: 'MMMM d, yyyy' }}
+
+      .google-post-message {{ vm.post.message }}
+    .google-post-media(ng-if='vm.post.image || vm.post.video')
+      img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
+      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' autoplay)
+    .google-post-interactions.clearfix
+      .google-post-actions
+        .google-post-action +{{ vm.post.shares.length }}
+        .google-post-action.fa.fa-share
+      .google-post-activity
+        img(ng-repeat='user in vm.post.relatedUsers', ng-src='{{ user.userImage }}')
+    .google-post-comments(ng-if='vm.post.comments.length')
+      .google-post-comment(ng-repeat='comment in vm.post.comments')
+        img.google-post-comment-user-image(ng-src='{{ comment.userImage }}')
+        .google-post-comment-message
+          a.google-post-comment-full-name(href='#') {{ comment.username }}
+          br
+          span.google-post-detail {{ comment.createdAt | date: 'MMMM d, yyyy' }}
+          span.google-post-comment-plus-one-count  +{{ comment.favorites.count }}
+          span.google-post-comment-plus-one +1
+          div {{ comment.message }}

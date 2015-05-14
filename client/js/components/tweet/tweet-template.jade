@@ -1,50 +1,51 @@
-.tweet-container
-  section.tweet-main
-    img.tweet-user-image(ng-src='{{ vm.post.userImage }}')
+.tweet-container-background
+  .tweet-container
+    section.tweet-main
+      img.tweet-user-image(ng-src='{{ vm.post.userImage }}')
 
-    .tweet-inner
-      .tweet-user-info
-        span.tweet-full-name {{ vm.post.fullName }}&nbsp;
-        span.tweet-username {{ vm.post.username }}&nbsp;
-        span.tweet-created-at.dot-before {{ vm.post.createdAt | date: 'MMM d' }}
+      .tweet-inner
+        .tweet-user-info
+          span.tweet-full-name {{ vm.post.fullName }}&nbsp;
+          span.tweet-username {{ vm.post.username }}&nbsp;
+          span.tweet-created-at.dot-before {{ vm.post.createdAt | date: 'MMM d' }}
 
-      .tweet-message {{ vm.post.message }}
-      img.tweet-image(ng-src='{{ vm.post.image }}' ng-if='vm.post.image')
-      div(ng-if='vm.post.video') {{ vm.post.video }}
+        .tweet-message {{ vm.post.message }}
+        img.tweet-image(ng-src='{{ vm.post.image }}' ng-if='vm.post.image')
+        div(ng-if='vm.post.video') {{ vm.post.video }}
 
-      .tweet-interaction
-        .tweet-retweets
-          .tweet-count-title Retweets
-          .tweet-count-number {{ vm.post.shares.length }}
-        .tweet-favorites
-          .tweet-count-title Favorites
-          .tweet-count-number {{ vm.post.favorites.length }}
-        .tweet-users-list
-          img(ng-repeat='user in vm.post.relatedUsers', ng-src='{{ user.userImage }}')
+        .tweet-interaction
+          .tweet-retweets
+            .tweet-count-title Retweets
+            .tweet-count-number {{ vm.post.shares.length }}
+          .tweet-favorites
+            .tweet-count-title Favorites
+            .tweet-count-number {{ vm.post.favorites.length }}
+          .tweet-users-list
+            img(ng-repeat='user in vm.post.relatedUsers', ng-src='{{ user.userImage }}')
 
-      .tweet-details
-        | {{ vm.post.createdAt | date: 'H:mm:ss a - d MMM yyyy ' }}
-        span.dot-before Details
-
-      ul.tweet-actions
-        li.fa.fa-arrow-left
-        li.fa.fa-retweet {{ vm.post.shares.length }}
-        li.fa.fa-star {{ vm.post.favorites.length }}
-        li.fa.fa-user-plus
-        li.fa.fa-ellipsis-h
-
-  section.tweet-comments
-    .tweet-comment(ng-repeat='comment in vm.post.comments')
-      img.tweet-comment-user-image(ng-src='{{ comment.userImage }}')
-      .tweet-comment-content
-        span.tweet-full-name {{ comment.fullName }}&nbsp;
-        span.tweet-username {{ comment.username }}&nbsp;
-        span.tweet-created-at.dot-before {{ comment.createdAt | date: 'MMM d' }}
-        .tweet-message {{ comment.message }}
+        .tweet-details
+          | {{ vm.post.createdAt | date: 'H:mm:ss a - d MMM yyyy ' }}
+          span.dot-before Details
 
         ul.tweet-actions
           li.fa.fa-arrow-left
-          li.fa.fa-retweet {{ comment.shares.length }}
-          li.fa.fa-star {{ comment.favorites.length }}
+          li.fa.fa-retweet {{ vm.post.shares.length }}
+          li.fa.fa-star {{ vm.post.favorites.length }}
           li.fa.fa-user-plus
           li.fa.fa-ellipsis-h
+
+    section.tweet-comments
+      .tweet-comment(ng-repeat='comment in vm.post.comments')
+        img.tweet-comment-user-image(ng-src='{{ comment.userImage }}')
+        .tweet-comment-content
+          span.tweet-full-name {{ comment.fullName }}&nbsp;
+          span.tweet-username {{ comment.username }}&nbsp;
+          span.tweet-created-at.dot-before {{ comment.createdAt | date: 'MMM d' }}
+          .tweet-message {{ comment.message }}
+
+          ul.tweet-actions
+            li.fa.fa-arrow-left
+            li.fa.fa-retweet {{ comment.shares.length }}
+            li.fa.fa-star {{ comment.favorites.length }}
+            li.fa.fa-user-plus
+            li.fa.fa-ellipsis-h
