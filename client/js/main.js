@@ -23,6 +23,8 @@ app.directive('instagram', require('./components/instagram/instagram'));
 app.controller('InstagramController', require('./components/instagram/instagram-controller.js'));
 app.directive('tumblrPost', require('./components/tumblr-post/tumblr-post'));
 app.controller('TumblrPostController', require('./components/tumblr-post/tumblr-post-controller.js'));
+app.directive('pin', require('./components/pin/pin'));
+app.controller('PinController', require('./components/pin/pin-controller.js'));
 
 app.directive('toolbar', require('./components/toolbar/toolbar'));
 app.controller('ToolbarController', require('./components/toolbar/toolbar-controller.js'));

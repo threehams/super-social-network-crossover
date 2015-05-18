@@ -13,10 +13,14 @@ var PostService = function($window, UUID, Comment) {
     this.privacy = attrs.privacy; // public, private
     this.location = attrs.location;
     this.tags = attrs.tags; // Tumblr only so far
+    this.source = attrs.source; // External source - youtube, etc
 
     this.message = attrs.message;
     this.image = attrs.image;
     this.video = attrs.video;
+
+    this.albumTitle = attrs.albumTitle;
+    this.albumImage = attrs.albumImage;
 
     this.shares = [];
     this.favorites = [];
@@ -47,7 +51,7 @@ var PostService = function($window, UUID, Comment) {
     return $window.localStorage.posts;
   };
 
-  Post.TYPES = ['google', 'facebook', 'instagram', 'twitter', 'tumblr'];
+  Post.TYPES = ['google', 'facebook', 'instagram', 'twitter', 'tumblr', 'pinterest'];
 
   return Post;
 };

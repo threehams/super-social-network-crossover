@@ -70,7 +70,7 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
   });
 
   vm.postTypes = Post.TYPES.concat('random');
-  vm.postType = 'random';
+  vm.postType = 'pinterest';
   vm.commentCount = 3;
   vm.favoriteCount = 5;
   vm.shareCount = 4;
@@ -82,10 +82,13 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
       message: _.sample(MESSAGES).message,
       tags: ['these', 'are', 'a', 'bunch', 'of', 'tags'],
       location: 'Los Angeles, CA',
-      privacy: 'Friends'
+      privacy: 'Friends',
+      source: 'youtube.com',
+      albumTitle: 'To Be Sorted',
+      albumImage: 'http://www.placecage.com/50/50'
     });
     var attach;
-    if (type === 'instagram') {
+    if (_.includes(['instagram', 'pinterest'], type)) {
       attach = _.random(0, 1);
     } else {
       attach = _.random(0, 3);

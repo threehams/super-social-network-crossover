@@ -1,0 +1,197 @@
+$pin-background: #E9E9E9;
+$pin-border-light: 1px solid rgba(0, 0, 0, 0.2);
+$pin-border-radius: 8px;
+$pin-actions-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.2);
+$pin-media-background: #F8F8F8;
+$pin-red: #bd081c;
+$pin-light-red: lighten($pin-red, 9);
+$pin-dark-red: darken($pin-red, 9);
+$pin-button-border-radius: 4px;
+$pin-section-margin: 15px;
+
+.pin-background {
+  background-color: $pin-background;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.pin-box {
+  background-color: white;
+  border: $pin-border-light;
+  border-radius: $pin-border-radius;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  margin-bottom: $pin-section-margin;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
+}
+
+.pin-post-actions {
+  box-shadow: $pin-actions-shadow;
+  border-bottom: $pin-border-light;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.pin-left-actions {
+  float: left;
+}
+
+.pin-right-actions {
+  float: right;
+}
+
+.pin-post-media {
+  padding: 0 20px;
+  background-color: $pin-media-background;
+
+  img, video {
+    display: block;
+    width: 100%;
+  }
+}
+
+.pin-button {
+  background: linear-gradient(to bottom, white 0%, #E6E6E6 100%);
+  border-radius: $pin-button-border-radius;
+  border: 1px solid #BBBBBB;
+  box-shadow: inset 0 0 0 1px white;
+  color: #4B4B4B;
+  font-size: 90%;
+  font-weight: 700;
+  height: 35px;
+  margin-right: 6px;
+  padding: 0 16px;
+  vertical-align: top;
+
+  .fa {
+    font-size: 140%;
+    vertical-align: middle;
+    margin-right: 7px;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}
+
+.pin-button-red {
+  @extend .pin-button;
+  background: linear-gradient(to bottom, $pin-light-red 0%, $pin-dark-red 100%);
+  border-color: #333333;
+  box-shadow: none;
+  color: white;
+}
+
+button.pin-button-left {
+  border-radius: $pin-button-border-radius 0 0 $pin-button-border-radius;
+  border-right: 0 none;
+  margin-right: 0;
+}
+
+button.pin-button-right {
+  border-radius: 0 $pin-button-border-radius $pin-button-border-radius 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pin-red {
+  color: $pin-red;
+}
+
+.pin-source {
+  padding: 10px;
+  border-top: $pin-border-light;
+  font-weight: 700;
+}
+
+.pin-source-action {
+  float: right;
+}
+
+.pin-comments {
+  background-color: white;
+  border-radius: $pin-border-radius;
+  border: $pin-border-light;
+  margin-bottom: $pin-section-margin;
+}
+
+.pin-username {
+  font-weight: 700;
+}
+
+.pin-user-image {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.pin-album-image {
+  width: 50px;
+  border-radius: 5px;
+}
+
+.pin-secondary {
+
+}
+
+.pin-date {
+  color: $font-tertiary;
+  font-size: 90%;
+
+  &:before {
+    content: " \00b7";
+  }
+}
+
+.pin-message {
+  display: block;
+}
+
+.pin-media-object {
+  padding: 8px 20px;
+
+  img {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .pin-comment-content {
+    display: table-cell;
+    width: 1000px;
+  }
+}
+
+.pin-details {
+  background-color: white;
+  border-radius: $pin-border-radius;
+  border: $pin-border-light;
+
+  > :first-child, > :last-child {
+    box-sizing: border-box;
+    width: 50%;
+
+    button {
+      float: right;
+    }
+  }
+
+  > :first-child {
+    border-right: $pin-border-light;
+    float: left;
+  }
+  > :last-child {
+    float: right;
+  }
+}
+
+.pin-details-header {
+  color: $font-tertiary;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
