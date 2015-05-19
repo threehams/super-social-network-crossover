@@ -9,27 +9,27 @@ var FRIENDS = [
   {
     username: 'porkproducts',
     fullName: 'Pork Products',
-    userImage: 'http://www.placecage.com/c/73/73'
+    userImage: 'http://lorempixel.com/73/73/'
   },
   {
     username: 'someotherguy',
     fullName: 'Someother Guy',
-    userImage: 'http://www.placecage.com/c/73/73'
+    userImage: 'http://lorempixel.com/g/73/73/'
   },
   {
     username: 'jenny188',
     fullName: 'Jenny OneEightEight',
-    userImage: 'http://lorempixel.com/73/73/'
+    userImage: 'http://placeimg.com/73/73/any'
   },
   {
     username: 'momtwitsum',
     fullName: 'Mom Twitsum',
-    userImage: 'http://www.placecage.com/73/73'
+    userImage: 'http://placecorgi.com/73/73'
   },
   {
     username: 'dadtwitsum',
     fullName: 'Dad Twitsum',
-    userImage: 'http://www.placecage.com/c/73/73'
+    userImage: 'http://placecreature.com/73/73'
   }
 ];
 
@@ -53,6 +53,28 @@ var MESSAGES = [
   {
     message: 'wait then what\'s this',
     image: 'http://www.placecage.com/600/400'
+  },
+  {
+    message: 'don\'t ya mean type'
+  },
+  {
+    message: 'I am the soul of crushed tomatoes'
+  },
+  {
+    message: 'yeah but albert einstein invented electricity'
+  },
+  {
+    message: 'that\'s deep man'
+  },
+  {
+    message: 'yeah well that\'s just, like, your opinion, man'
+  },
+  {
+    message: 'Agree 110%'
+  },
+  {
+    message: 'GO SEE MAD MAX',
+    image: 'http://loremflickr.com/600/400/madmax'
   }
 ];
 
@@ -70,7 +92,7 @@ module.exports = ['Post', 'User', '$timeout', function (Post, User, $timeout) {
   });
 
   vm.postTypes = Post.TYPES.concat('random');
-  vm.postType = 'pinterest';
+  vm.postType = 'random';
   vm.commentCount = 3;
   vm.favoriteCount = 5;
   vm.shareCount = 4;

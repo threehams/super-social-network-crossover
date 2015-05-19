@@ -3,25 +3,10 @@
 @import 'base';
 @import 'mixins';
 
-.page-container {
-  padding: $toolbar-height + 20px 0 40px 0;
-  background-color: $instagram-background;
-}
-
-.post {
-  transition: opacity 0.5s linear;
-
-  &.ng-enter.ng-enter-active {
-    opacity: 1;
-  }
-
-  &.ng-enter {
-    opacity: 0;
-  }
-}
-
+// Pages
 @import '../js/pages/page/page-style';
 
+// Components
 @import '../js/components/tweet/tweet-style';
 @import '../js/components/facebook-post/facebook-post-style';
 @import '../js/components/google-post/google-post-style';

@@ -24,22 +24,22 @@
       .facebook-post-likes(ng-if='vm.post.favorites.length > 0')
         i.fa.fa-thumbs-o-up.facebook-blue &nbsp;
         span(ng-if='vm.post.favorites.length === 1')
-          a(href='#') {{ vm.post.favorites[0].username }}
+          a(href='#') {{ vm.post.favorites[0].fullName }}
           |  likes this.
         span(ng-if='vm.post.favorites.length === 2')
-          a(href='#') {{ vm.post.favorites[0].username }}
+          a(href='#') {{ vm.post.favorites[0].fullName }}
           |  and&nbsp;
-          a(href='#') {{ vm.post.favorites[1].username }}
+          a(href='#') {{ vm.post.favorites[1].fullName }}
           |  like this.
         span(ng-if='vm.post.favorites.length === 3')
-          a(href='#') {{ vm.post.favorites[0].username }}
+          a(href='#') {{ vm.post.favorites[0].fullName }}
           |  and&nbsp;
           a(href='#') {{ vm.post.favorites.length - 1 }} others
           |  like this.
         span(ng-if='vm.post.favorites.length > 3')
-          a(href='#') {{ vm.post.favorites[0].username }}
+          a(href='#') {{ vm.post.favorites[0].fullName }}
           | ,&nbsp;
-          a(href='#') {{ vm.post.favorites[1].username }}
+          a(href='#') {{ vm.post.favorites[1].fullName }}
           |  and&nbsp;
           a(href='#') {{ vm.post.favorites.length - 2 }} others
           |  like this.
@@ -48,8 +48,10 @@
         .facebook-post-comment(ng-repeat='comment in vm.post.comments')
           img.facebook-post-comment-user-image(ng-src='{{ comment.userImage }}')
           .facebook-post-comment-right
-            a.facebook-post-comment-username(href='#') {{ comment.username }}
+            a.facebook-post-comment-username(href='#') {{ comment.fullName }}
             |  {{ comment.message }}
+            img(ng-src='{{ comment.image }}', ng-if='comment.image')
+            video(ng-src='{{ comment.video }}', ng-if='comment.video', controls)
             br
             a.facebook-post-divider(href='#') Like
             a.facebook-post-divider(href='#') Reply

@@ -102,6 +102,11 @@ $facebook-post-background: #3b5998;
 
 .facebook-post-comment-right {
   display: table-cell;
+
+  img {
+    display: block;
+    width: 260px;
+  }
 }
 
 .facebook-post-divider {
