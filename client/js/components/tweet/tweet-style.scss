@@ -2,10 +2,18 @@ $tweet-border-light: 1px solid rgba(0, 0, 0, 0.15);
 $tweet-left-width: 58px;
 $tweet-padding: 12px;
 $tweet-border-radius: 10px;
+$tweet-background: #55ACEE;
 
 .dot-before:before {
   content: "\00b7";
   margin: 0 5px 0 0;
+}
+
+.tweet-container-background {
+  background-color: $tweet-background;
+  margin: 0 auto;
+  padding: 20px;
+  width: 640px;
 }
 
 .tweet-container {
@@ -14,7 +22,6 @@ $tweet-border-radius: 10px;
   border-radius: $tweet-border-radius;
   box-sizing: border-box;
   position: relative;
-  margin: 5px auto;
   width: 100%;
 
   @include desktop {
@@ -39,10 +46,12 @@ $tweet-border-radius: 10px;
 .tweet-inner {
   display: table-cell; // Show content in block next to user icon (block formatting context)
   margin: 0;
+  width: 2000px; // ensure width is 100% of parent
 }
 
 .tweet-message {
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .tweet-image {
@@ -50,6 +59,11 @@ $tweet-border-radius: 10px;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 8px;
+}
+
+.tweet-video {
+  display: block;
+  width: 100%;
 }
 
 .tweet-full-name {
@@ -131,6 +145,7 @@ $tweet-border-radius: 10px;
     &:before {
       margin-right: 9px;
       font-size: 20px;
+      font-weight: 400;
       color: $font-tertiary;
       vertical-align: middle;
     }

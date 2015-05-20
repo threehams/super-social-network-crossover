@@ -2,13 +2,22 @@ $facebook-post-comment-bg-color: #F6F7F8;
 $facebook-post-main-bg-color: white;
 $facebook-post-padding: 10px;
 $facebook-post-border-radius: 5px;
-$facebook-post-border: 1px solid rgba(0, 0, 0, 0.1);;
+$facebook-post-border: 1px solid rgba(0, 0, 0, 0.1);
+$facebook-post-background: #3b5998;
+
+.facebook-post-background {
+  width: 640px;
+  display: block;
+  background-color: $facebook-post-background;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 .facebook-post {
   border: $facebook-post-border;
   border-radius: $facebook-post-border-radius;
   font-size: 90%;
-  margin: 5px auto;
+  margin-left: auto;
   vertical-align: top;
   width: 100%;
 
@@ -48,7 +57,7 @@ $facebook-post-border: 1px solid rgba(0, 0, 0, 0.1);;
   margin: 10px 0;
 }
 
-.facebook-post-image {
+.facebook-post-media {
   display: block;
   margin-bottom: 10px;
   width: 100%;
@@ -93,6 +102,11 @@ $facebook-post-border: 1px solid rgba(0, 0, 0, 0.1);;
 
 .facebook-post-comment-right {
   display: table-cell;
+
+  img {
+    display: block;
+    width: 260px;
+  }
 }
 
 .facebook-post-divider {

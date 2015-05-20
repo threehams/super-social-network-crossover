@@ -16,3 +16,8 @@
   display: block;
   margin: 0 auto;
 }
+
+.page-container {
+  padding: $toolbar-height + 20px 0 40px 0;
+  background-color: $instagram-background;
+}

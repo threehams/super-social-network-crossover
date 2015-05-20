@@ -1,0 +1,156 @@
+$tumblr-post-padding: 10px 20px;
+$tumblr-post-background: #36465D;
+$tumblr-font-color-notes: lighten($font-main, 20%);
+
+.tumblr-post-background {
+  background-color: $tumblr-post-background;
+  margin: 0 auto;
+  padding: 20px;
+  width: 640px;
+}
+
+.tumblr-post {
+  background-color: white;
+  border-radius: 6px;
+  position: relative;
+  width: 100%;
+
+  @include desktop {
+    width: $fixed-post-width;
+  }
+}
+
+.tumblr-post-user-image {
+  border-radius: 4px;
+  left: -(64px + 24px);
+  position: absolute;
+  width: 64px;
+}
+
+.tumblr-post-username {
+  color: $font-tertiary;
+  font-size: 90%;
+  font-weight: 700;
+}
+
+.tumblr-post-info {
+  padding: $tumblr-post-padding;
+  width: 100%;
+}
+
+.tumblr-post-media {
+  img, video {
+    display: block;
+    width: 100%;
+  }
+}
+
+.tumblr-post-lower {
+  padding: $tumblr-post-padding;
+}
+
+.tumblr-post-message {
+  margin-bottom: 10px;
+}
+
+.tumblr-post-tags {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.tumblr-post-tag {
+  color: $font-tertiary;
+  display: inline-block;
+  font-size: 90%;
+  margin-right: 5px;
+
+  &:before {
+    content: '#';
+  }
+}
+
+.tumblr-post-notes-count {
+  color: $font-tertiary;
+  display: inline-block;
+  font-size: 90%;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+}
+
+.tumblr-post-actions {
+  color: $font-tertiary;
+  display: inline-block;
+  float: right;
+  padding-right: 8px;
+  vertical-align: middle;
+
+  .fa {
+    margin-left: 15px;
+    font-size: 22px;
+  }
+}
+
+.tumblr-post-notes-tooltip {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  color: $tumblr-font-color-notes;
+  font-size: 95%;
+  font-weight: 400;
+  left: 50%;
+  padding: 10px;
+  position: absolute;
+  width: 360px;
+  z-index: 1;
+}
+
+.tumblr-post-notes-row {
+  $row-border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: $row-border;
+  padding: 10px;
+
+  &:first-child {
+    border-top: $row-border;
+  }
+
+  & > img {
+    border-radius: 2px;
+    float: left;
+    margin-right: 7px;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.tumblr-post-notes-username {
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &:hover, &:active, &:link, &:visited {
+    color: $tumblr-font-color-notes;
+  }
+}
+
+.tumblr-post-note-content {
+  display: table-cell;
+  width: 1000px;
+
+  > i {
+    color: #55ACEE;
+    float: right;
+    font-size: 200%;
+  }
+}
+
+.tumblr-post-note-quote {
+  text-indent: 5px;
+
+  &:before {
+    color: lighten($font-tertiary, 15%);
+    content: "\007C  ";
+    font-size: 150%;
+  }
+}

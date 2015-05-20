@@ -7,8 +7,8 @@ module.exports = function() {
       post: '='
     },
     replace: true,
-    template: require('./instagram-template.jade'),
-    controller: require('./instagram-controller'),
+    template: require('./pin-template.jade'),
+    controller: require('./pin-controller'),
     controllerAs: 'vm',
     bindToController: true
   };

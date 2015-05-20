@@ -1,0 +1,8 @@
+.feed
+  .feed-post(ng-repeat='post in vm.posts track by post.id' ng-switch='post.type')
+    tweet(post='post', ng-switch-when='twitter')
+    facebook-post(post='post', ng-switch-when='facebook')
+    google-post(post='post', ng-switch-when='google')
+    instagram(post='post', ng-switch-when='instagram')
+    tumblr-post(post='post', ng-switch-when='tumblr')
+    pin(post='post', ng-switch-when='pinterest')

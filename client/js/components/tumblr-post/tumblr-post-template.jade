@@ -1,0 +1,26 @@
+.tumblr-post-background
+  .tumblr-post
+    img.tumblr-post-user-image(ng-src='{{ vm.post.userImage }}')
+    .tumblr-post-info
+      .tumblr-post-username {{ vm.post.username }}
+    .tumblr-post-media
+      img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
+      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video' controls)
+    .tumblr-post-lower.clearfix
+      .tumblr-post-message {{ vm.post.message }}
+      .tumblr-post-tags
+        .tumblr-post-tag(ng-repeat='tag in vm.post.tags') {{ tag }}
+      .tumblr-post-actions
+        i.fa.fa-ellipsis-h
+        i.fa.fa-retweet
+        i.fa.fa-heart
+      .tumblr-post-notes-count(ng-click='vm.showNotes = !vm.showNotes') {{ vm.post.timeline.length }} notes
+        .tumblr-post-notes-tooltip(ng-if='vm.showNotes')
+          .tumblr-post-notes-row.clearfix(ng-repeat='event in vm.post.timeline')
+            img(ng-src='{{ event.user.userImage }}')
+            .tumblr-post-note-content
+              i.fa.fa-plus-square
+              a.tumblr-post-notes-username(href='#') {{ event.user.username }}
+              span  {{ vm.translateAction(event.action) }}
+              span(ng-if='event.comment')  and added:
+              .tumblr-post-note-quote(ng-if='event.comment') {{ event.comment.message }}

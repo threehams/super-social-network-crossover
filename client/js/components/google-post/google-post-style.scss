@@ -1,17 +1,23 @@
-$google-post-background: white;
-$google-post-comments-bg-color: #f5f5f5;
+$google-post-background: #E5E5E5;
+$google-post-comments-bg-color: #F5F5F5;
 $google-post-border-radius: 2px;
 $google-post-border: 1px solid #dddddd;
 $google-post-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 $google-post-padding: 20px;
 
-.google-post {
+.google-post-background {
   background-color: $google-post-background;
+  margin: 0 auto;
+  padding: 20px;
+  width: 640px;
+}
+
+.google-post {
+  background-color: white;
   border-radius: $google-post-border-radius;
   box-shadow: $google-post-shadow;
   font-size: 90%;
   letter-spacing: normal;
-  margin: 5px auto;
   width: 100%;
 
   @include desktop {
@@ -21,6 +27,7 @@ $google-post-padding: 20px;
 
 .google-post-user-image {
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .google-post-full-name {
@@ -91,6 +98,11 @@ $google-post-padding: 20px;
 .google-post-media {
   padding: 0 5px;
   img {
+    display: block;
+    width: 100%;
+  }
+  video {
+    display: block;
     width: 100%;
   }
 }

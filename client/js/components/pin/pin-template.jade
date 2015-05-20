@@ -1,0 +1,54 @@
+.pin-background
+  section.pin-box
+    .pin-post-actions.clearfix
+      .pin-left-actions
+        button.pin-button-red(type='button', ng-if='vm.post.shares.length === 0') Pin it
+        button.pin-button-red.pin-button-left(type='button', ng-if='vm.post.shares.length > 0') Pin it
+        button.pin-button-red.pin-button-right(type='button', ng-if='vm.post.shares.length > 0')
+          | {{ vm.post.shares.length }}
+        button.pin-button(type='button', ng-if='vm.post.favorites.length === 0')
+          i.fa.fa-heart
+          span Like
+        button.pin-button.pin-button-left(type='button', ng-if='vm.post.favorites.length > 0')
+          i.fa.fa-heart
+          span Like
+        button.pin-button.pin-button-right(type='button', ng-if='vm.post.favorites.length > 0')
+          | {{ vm.post.favorites.length }}
+        button.pin-button(type='button')
+          i.fa.fa-globe
+          span Visit site
+      .pin-right-actions
+        button(type='button').pin-button
+          i.fa.fa-paper-plane-o
+          span Send
+        button(type='button').pin-button
+          i.fa.fa-facebook-square
+          span Share
+    .pin-post-media
+      img(ng-src='{{ vm.post.image }}', ng-if='vm.post.image')
+      video(ng-src='{{ vm.post.video }}', ng-if='vm.post.video', controls)
+    .pin-source
+      i.fa.fa-flag.pin-source-action
+      | Found on {{ vm.post.source }}
+
+  section.pin-box
+    .pin-comment.pin-media-object.clearfix(ng-repeat='comment in vm.post.comments')
+      img.pin-user-image(ng-src='{{ comment.userImage }}')
+      .pin-comment-content
+        span.pin-username {{ comment.username }}
+        span.pin-date  {{ comment.createdAt | date: 'MMM d' }}
+        .pin-message {{ comment.message }}
+
+  section.pin-box.pin-details.clearfix
+    .pin-media-object
+      img.pin-user-image(ng-src='{{ vm.post.userImage }}')
+      button.pin-button(type='button')
+        span.pin-red Follow
+      span.pin-details-header Added by
+      .pin-username {{ vm.post.username }}
+    .pin-media-object
+      img.pin-album-image(ng-src='{{ vm.post.albumImage }}')
+      button.pin-button(type='button')
+        span.pin-red Follow
+      span.pin-details-header Added to
+      .pin-username {{ vm.post.albumTitle }}
