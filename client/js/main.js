@@ -37,6 +37,11 @@ app.service('UUID', require('./services/uuid-service'));
 app.factory('Post', require('./services/post-service'));
 app.factory('Comment', require('./services/comment-service'));
 app.factory('User', require('./services/user-service'));
+app.factory('Event', require('./services/event-service'));
+
+// values
+app.value('randomMessages', require('./services/random-messages.js'));
+app.value('randomUsers', require('./services/random-users.js'));
 
 // custom validators
 app.directive('match', require('./validators/match'));

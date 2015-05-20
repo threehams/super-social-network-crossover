@@ -42,15 +42,32 @@ describe('Post', function() {
     });
   });
 
-  describe('share', function() {
-    it('updates the list of shares', function() {
+  describe('favorites', function() {
+    it('updates the list of favorites', function() {
       that.post.favorite(that.user);
       expect(that.post.favorites).to.eql([that.user]);
     });
 
     it('updates the list of related users', function() {
-      that.post.share(that.user);
+      that.post.favorite(that.user);
       expect(that.post.relatedUsers).to.eql([that.user]);
     });
+
+    //it('adds a share event with a comment', function () {
+    //  that.post.favorite(that.user, {message: 'oh hai'});
+    //  var event = that.post.timeline[0];
+    //  expect(event.user).to.eql(that.user);
+    //});
+    //
+    //it('adds a share event without a comment', function () {
+    //
+    //});
   });
+
+  //describe('timeline', function() {
+  //
+  //  it('adds an event with a comment', function () {
+  //
+  //  });
+  //});
 });
